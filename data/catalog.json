@@ -1,0 +1,296 @@
+{
+  "categories": [
+    {
+      "id": "vapes",
+      "name": "Disposable Vapes",
+      "accent": "#ff3ec8"
+    },
+    {
+      "id": "eliquid",
+      "name": "E-Liquids",
+      "accent": "#4d8dff"
+    },
+    {
+      "id": "shisha",
+      "name": "Shisha / Tobacco",
+      "accent": "#39ff5c"
+    },
+    {
+      "id": "cbdshisha",
+      "name": "CBD Shisha",
+      "accent": "#39ff5c"
+    },
+    {
+      "id": "delta8",
+      "name": "Delta 8 THC",
+      "accent": "#ff3ec8"
+    },
+    {
+      "id": "kratom",
+      "name": "Kratom",
+      "accent": "#4d8dff"
+    },
+    {
+      "id": "cbd",
+      "name": "CBD",
+      "accent": "#39ff5c"
+    },
+    {
+      "id": "glass",
+      "name": "Glass Pipes",
+      "accent": "#4d8dff"
+    },
+    {
+      "id": "hookahs",
+      "name": "Hookahs",
+      "accent": "#e3b341"
+    },
+    {
+      "id": "papers",
+      "name": "Papers & Accessories",
+      "accent": "#39ff5c"
+    }
+  ],
+  "products": [
+    {
+      "id": "dv5k",
+      "cat": "vapes",
+      "name": "Disposable Vape \u00b7 5,000 puff",
+      "price": 19.99,
+      "delivery": true,
+      "featured": true,
+      "visible": true,
+      "soldOut": false
+    },
+    {
+      "id": "dv15k",
+      "cat": "vapes",
+      "name": "Disposable Vape \u00b7 15,000 puff",
+      "price": 24.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "dv0",
+      "cat": "vapes",
+      "name": "Zero-Nic Disposable",
+      "price": 17.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "el60",
+      "cat": "eliquid",
+      "name": "Freebase E-Liquid \u00b7 60ml",
+      "price": 17.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "ns30",
+      "cat": "eliquid",
+      "name": "Nic Salt \u00b7 30ml",
+      "price": 15.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "af250",
+      "cat": "shisha",
+      "name": "Al Fakher \u00b7 250g",
+      "price": 21.99,
+      "delivery": true,
+      "featured": true,
+      "visible": true,
+      "soldOut": false
+    },
+    {
+      "id": "fu100",
+      "cat": "shisha",
+      "name": "Fumari \u00b7 100g",
+      "price": 12.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "mz250",
+      "cat": "shisha",
+      "name": "Mazaya \u00b7 250g",
+      "price": 18.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "cbs50",
+      "cat": "cbdshisha",
+      "name": "CBD Shisha \u00b7 50g",
+      "price": 14.99,
+      "delivery": false,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "d8g",
+      "cat": "delta8",
+      "name": "The Hemp Doctor \u00b7 Delta 8 Gummies",
+      "price": 29.99,
+      "delivery": false,
+      "featured": true,
+      "visible": true,
+      "soldOut": false
+    },
+    {
+      "id": "d8c",
+      "cat": "delta8",
+      "name": "Delta 8 Cartridge \u00b7 1g",
+      "price": 34.99,
+      "delivery": false,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "krc",
+      "cat": "kratom",
+      "name": "Kratom Capsules \u00b7 60ct",
+      "price": 24.99,
+      "delivery": false,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "krp",
+      "cat": "kratom",
+      "name": "Kratom Powder \u00b7 100g",
+      "price": 19.99,
+      "delivery": false,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "cbt",
+      "cat": "cbd",
+      "name": "CBD Tincture \u00b7 1000mg",
+      "price": 39.99,
+      "delivery": true,
+      "featured": true,
+      "visible": true,
+      "soldOut": false
+    },
+    {
+      "id": "cbg",
+      "cat": "cbd",
+      "name": "CBD Gummies \u00b7 30ct",
+      "price": 27.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "ghp",
+      "cat": "glass",
+      "name": "Glass Hand Pipe",
+      "price": 14.99,
+      "delivery": false,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "gwp",
+      "cat": "glass",
+      "name": "Glass Water Pipe \u00b7 12in",
+      "price": 59.99,
+      "delivery": false,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "hk22",
+      "cat": "hookahs",
+      "name": "Modern Hookah \u00b7 22in",
+      "price": 89.99,
+      "delivery": false,
+      "featured": true,
+      "visible": true,
+      "soldOut": false
+    },
+    {
+      "id": "hkh",
+      "cat": "hookahs",
+      "name": "Silicone Hookah Hose",
+      "price": 16.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "hkc",
+      "cat": "hookahs",
+      "name": "Natural Coconut Coals \u00b7 1kg",
+      "price": 11.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "hkb",
+      "cat": "hookahs",
+      "name": "Clay Phunnel Bowl",
+      "price": 12.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "rawk",
+      "cat": "papers",
+      "name": "RAW Classic \u00b7 King Size",
+      "price": 3.49,
+      "delivery": true,
+      "featured": true,
+      "visible": true,
+      "soldOut": false
+    },
+    {
+      "id": "rawc",
+      "cat": "papers",
+      "name": "RAW Cones \u00b7 6-pack",
+      "price": 5.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    },
+    {
+      "id": "lgt",
+      "cat": "papers",
+      "name": "Torch Lighter",
+      "price": 9.99,
+      "delivery": true,
+      "visible": true,
+      "soldOut": false,
+      "featured": false
+    }
+  ]
+}

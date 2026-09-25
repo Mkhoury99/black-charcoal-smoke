@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Admin</title>
+<style>
+body { margin: 0; background: #0a0a0c; color: #e8e8ea; font-family: system-ui, sans-serif; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 28px 16px 80px; }
+h1 { font-size: 28px; letter-spacing: .04em; }
+input, select { width: 100%; min-height: 42px; margin: 4px 0 12px; padding: 0 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.16); background: #111215; color: #fff; }
+button { min-height: 40px; border: 0; border-radius: 8px; background: #39ff5c; color: #06140a; font-weight: 700; padding: 0 14px; cursor: pointer; }
+button.ghost { background: transparent; color: #e8e8ea; border: 1px solid rgba(255,255,255,.2); }
+label.check { display: flex; gap: 8px; align-items: center; margin: 6px 0; }
+label.check input { width: auto; min-height: 0; }
+.item { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+.meta { color: #9a9aa3; font-size: 13px; }
+.box { max-width: 380px; margin: 12vh auto; background: #14151a; border: 1px solid rgba(57,255,92,.4); border-radius: 16px; padding: 24px; }
+.editor { display: none; margin-top: 18px; background: #14151a; border-radius: 16px; padding: 18px; }
+.editor.on { display: block; }
+.hidden { display: none; }
+.err { color: #ffb4c8; }
+</style>
+</head>
+<body>
+<div id="login" class="box">
+  <h1>ADMIN</h1>
+  <input id="user" placeholder="Username" autocomplete="username">
+  <input id="pass" type="password" placeholder="Password" autocomplete="current-password">
+  <button id="enter">Sign in</button>
+  <p id="err" class="err"></p>
+</div>
+<div id="app" class="wrap hidden">
+  <h1>SHOP ITEMS</h1>
+  <p class="meta">Changes update the shop in this browser as soon as you save. They are not linked from the public site.</p>
+  <p><button id="add">Add item</button></p>
+  <div id="list"></div>
+  <form id="editor" class="editor">
+    <h2 id="title">Edit item</h2>
+    <label>Name</label><input id="name" required>
+    <label>Type</label><select id="cat"></select>
+    <label>Price</label><input id="price" type="number" min="0" step="0.01" required>
+    <label class="check"><input id="visible" type="checkbox"> Show on the shop page</label>
+    <label class="check"><input id="soldOut" type="checkbox"> Sold out</label>
+    <label class="check"><input id="featured" type="checkbox"> Featured on the home page</label>
+    <label class="check"><input id="delivery" type="checkbox"> Available for delivery</label>
+    <p>
+      <button type="submit">Save</button>
+      <button type="button" class="ghost" id="cancel">Cancel</button>
+      <button type="button" class="ghost" id="remove">Delete</button>
+    </p>
+  </form>
+  <p id="status" class="meta"></p>
+</div>
+<script>
+const USER = "admin";
+const PASS = "charcoal123";
+let catalog = null;
+let editing = null;
+const $ = id => document.getElementById(id);
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+$("enter").onclick = () => {
+  if ($("user").value.trim() !== USER || $("pass").value !== PASS) {
+    $("err").textContent = "Wrong username or password.";
+    return;
+  }
+  sessionStorage.setItem("bcs-admin", "1");
+  start();
+};
+if (sessionStorage.getItem("bcs-admin") === "1") start();
+
+async function start() {
+  $("login").classList.add("hidden");
+  $("app").classList.remove("hidden");
+  const saved = localStorage.getItem("bcs-catalog");
+  if (saved) catalog = JSON.parse(saved);
+  else {
+    const res = await fetch("../data/catalog.json?ts=" + Date.now());
+    catalog = await res.json();
+  }
+  draw();
+}
+function catName(id) {
+  const c = catalog.categories.find(x => x.id === id);
+  return c ? c.name : id;
+}
+function draw() {
+  $("cat").innerHTML = catalog.categories.map(c => '<option value="' + c.id + '">' + esc(c.name) + "</option>").join("");
+  $("list").innerHTML = catalog.products.map(p =>
+    '<div class="item"><div><strong>' + esc(p.name) + '</strong><div class="meta">' + esc(catName(p.cat)) + " · $" + Number(p.price).toFixed(2) +
+    (p.visible === false ? " · hidden" : "") + (p.soldOut ? " · sold out" : "") + (p.featured ? " · featured" : "") +
+    '</div></div><button class="ghost" data-id="' + p.id + '">Edit</button></div>'
+  ).join("");
+}
+$("list").onclick = e => {
+  const btn = e.target.closest("[data-id]");
+  if (!btn) return;
+  open(catalog.products.find(p => p.id === btn.dataset.id));
+};
+$("add").onclick = () => open(null);
+function open(p) {
+  editing = p;
+  $("editor").classList.add("on");
+  $("title").textContent = p ? "Edit item" : "New item";
+  $("name").value = p ? p.name : "";
+  $("price").value = p ? p.price : "";
+  $("visible").checked = p ? p.visible !== false : true;
+  $("soldOut").checked = p ? !!p.soldOut : false;
+  $("featured").checked = p ? !!p.featured : false;
+  $("delivery").checked = p ? !!p.delivery : true;
+  $("remove").style.display = p ? "" : "none";
+  if (p) $("cat").value = p.cat;
+}
+$("cancel").onclick = () => $("editor").classList.remove("on");
+$("editor").onsubmit = e => {
+  e.preventDefault();
+  const item = {
+    id: editing ? editing.id : ("item-" + Date.now().toString(36)),
+    name: $("name").value.trim(),
+    cat: $("cat").value,
+    price: Number($("price").value),
+    visible: $("visible").checked,
+    soldOut: $("soldOut").checked,
+    featured: $("featured").checked,
+    delivery: $("delivery").checked
+  };
+  if (editing) catalog.products = catalog.products.map(p => p.id === item.id ? item : p);
+  else catalog.products.push(item);
+  localStorage.setItem("bcs-catalog", JSON.stringify(catalog));
+  $("editor").classList.remove("on");
+  $("status").textContent = "Saved. Open the shop in this browser to see it.";
+  draw();
+};
+$("remove").onclick = () => {
+  if (!editing || !confirm("Delete this item?")) return;
+  catalog.products = catalog.products.filter(p => p.id !== editing.id);
+  localStorage.setItem("bcs-catalog", JSON.stringify(catalog));
+  $("editor").classList.remove("on");
+  draw();
+};
+</script>
+</body>
+</html>

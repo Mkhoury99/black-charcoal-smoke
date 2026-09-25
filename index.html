@@ -560,7 +560,7 @@ input::placeholder{color:#6c6d76}
 </x-dc>
 <script type="text/x-dc" data-dc-script="" data-props="{&quot;skipGate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Preview&quot;},&quot;staticHero&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;smokeIntensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.3,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
 const NEON = { green: '#39ff5c', magenta: '#ff3ec8', blue: '#4d8dff', gold: '#e3b341' };
-const CATEGORIES = [
+let CATEGORIES = [
   { id: 'vapes', name: 'Disposable Vapes', accent: NEON.magenta },
   { id: 'eliquid', name: 'E-Liquids', accent: NEON.blue },
   { id: 'shisha', name: 'Shisha / Tobacco', accent: NEON.green },
@@ -572,7 +572,7 @@ const CATEGORIES = [
   { id: 'hookahs', name: 'Hookahs', accent: NEON.gold },
   { id: 'papers', name: 'Papers & Accessories', accent: NEON.green },
 ];
-const PRODUCTS = [
+let PRODUCTS = [
   { id: 'dv5k', cat: 'vapes', name: 'Disposable Vape · 5,000 puff', price: 19.99, delivery: true, featured: true },
   { id: 'dv15k', cat: 'vapes', name: 'Disposable Vape · 15,000 puff', price: 24.99, delivery: true },
   { id: 'dv0', cat: 'vapes', name: 'Zero-Nic Disposable', price: 17.99, delivery: true },
@@ -629,6 +629,21 @@ function storeClock() {
     return { day: d.getDay(), hr: d.getHours() + d.getMinutes() / 60 };
   }
 }
+function readCatalogOverride() {
+  try {
+    const raw = localStorage.getItem('bcs-catalog');
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) { return null; }
+}
+function applyCatalog(data) {
+  if (!data || !Array.isArray(data.products)) return;
+  PRODUCTS = data.products.map(p => ({
+    id: p.id, cat: p.cat, name: p.name, price: Number(p.price),
+    delivery: !!p.delivery, featured: !!p.featured,
+    visible: p.visible !== false, soldOut: !!p.soldOut
+  }));
+  if (Array.isArray(data.categories) && data.categories.length) CATEGORIES = data.categories;
+}
 
 class Component extends DCLogic {
   state = {
@@ -641,6 +656,11 @@ class Component extends DCLogic {
   canvasRef = React.createRef();
 
   componentDidMount() {
+    const local = readCatalogOverride();
+    if (local) { applyCatalog(local); this.setState({ now: Date.now() }); }
+    fetch('data/catalog.json?ts=' + Date.now()).then(r => r.ok ? r.json() : null).then(data => {
+      if (!local && data) { applyCatalog(data); this.setState({ now: Date.now() }); }
+    }).catch(() => {});
     this._t = setInterval(() => this.setState({ now: Date.now() }), 60000);
     this._onHash = () => this.applyHash();
     window.addEventListener('hashchange', this._onHash);
@@ -745,19 +765,26 @@ class Component extends DCLogic {
     const prodById = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
     const { page, mode, cart } = this.state;
 
-    const shopItems = PRODUCTS.filter(p => this.state.shopFilter === 'all' || p.cat === this.state.shopFilter).map(p => {
+    const shopItems = PRODUCTS.filter(p => p.visible !== false && (this.state.shopFilter === 'all' || p.cat === this.state.shopFilter)).map(p => {
       const c = byId[p.cat] || {};
+      const sold = !!p.soldOut;
       return { ...p, catName: c.name, accent: c.accent, priceText: '$' + p.price.toFixed(2),
-        tag: p.delivery ? 'DELIVERY' : 'IN-STORE', tagBg: p.delivery ? 'rgba(57,255,92,.15)' : 'rgba(10,10,12,.7)',
-        tagColor: p.delivery ? '#eaffe9' : '#b3b3bb', tagBorder: p.delivery ? 'rgba(57,255,92,.6)' : 'rgba(255,255,255,.18)' };
+        tag: sold ? 'SOLD OUT' : (p.delivery ? 'DELIVERY' : 'IN-STORE'),
+        tagBg: sold ? 'rgba(255,62,200,.12)' : (p.delivery ? 'rgba(57,255,92,.15)' : 'rgba(10,10,12,.7)'),
+        tagColor: sold ? '#ffd6f2' : (p.delivery ? '#eaffe9' : '#b3b3bb'),
+        tagBorder: sold ? 'rgba(255,62,200,.6)' : (p.delivery ? 'rgba(57,255,92,.6)' : 'rgba(255,255,255,.18)') };
     });
-    const orderItems = PRODUCTS.filter(p => this.state.orderFilter === 'all' || p.cat === this.state.orderFilter).map(p => {
+    const orderItems = PRODUCTS.filter(p => p.visible !== false && (this.state.orderFilter === 'all' || p.cat === this.state.orderFilter)).map(p => {
       const c = byId[p.cat] || {};
-      return { ...p, catName: c.name, accent: p.delivery ? c.accent : '#3a3b42', priceText: '$' + p.price.toFixed(2),
-        storeOnly: !p.delivery, opacity: p.delivery ? 1 : .72,
+      const sold = !!p.soldOut;
+      const canDeliver = !!p.delivery && !sold;
+      return { ...p, delivery: canDeliver, catName: c.name, accent: canDeliver ? c.accent : '#3a3b42', priceText: '$' + p.price.toFixed(2),
+        storeOnly: !canDeliver && !sold, opacity: canDeliver ? 1 : .72,
         add: () => this.setState(s => ({ cart: { ...s.cart, [p.id]: (s.cart[p.id] || 0) + 1 }, cartOpen: true })),
-        tag: p.delivery ? 'DELIVERY' : 'IN-STORE ONLY', tagBg: p.delivery ? 'rgba(57,255,92,.15)' : 'rgba(10,10,12,.75)',
-        tagColor: p.delivery ? '#eaffe9' : '#b3b3bb', tagBorder: p.delivery ? 'rgba(57,255,92,.6)' : 'rgba(255,255,255,.18)' };
+        tag: sold ? 'SOLD OUT' : (canDeliver ? 'DELIVERY' : 'IN-STORE ONLY'),
+        tagBg: sold ? 'rgba(255,62,200,.12)' : (canDeliver ? 'rgba(57,255,92,.15)' : 'rgba(10,10,12,.75)'),
+        tagColor: sold ? '#ffd6f2' : (canDeliver ? '#eaffe9' : '#b3b3bb'),
+        tagBorder: sold ? 'rgba(255,62,200,.6)' : (canDeliver ? 'rgba(57,255,92,.6)' : 'rgba(255,255,255,.18)') };
     });
     const cartItems = Object.entries(cart).filter(([id]) => prodById[id]).map(([id, qty]) => {
       const p = prodById[id]; const c = byId[p.cat] || {};
@@ -793,7 +820,7 @@ class Component extends DCLogic {
       goHome: this.nav('home'), goShop: this.nav('shop'), goOrder: this.nav('order'),
       goHours: this.nav('home', 'location'), goContact: this.nav('home', 'contact'),
       canvasRef: this.canvasRef,
-      featured: PRODUCTS.filter(p => p.featured).map(p => ({ ...p, catName: byId[p.cat].name, accent: byId[p.cat].accent, priceText: '$' + p.price.toFixed(2) })),
+      featured: PRODUCTS.filter(p => p.visible !== false && p.featured && !p.soldOut).map(p => ({ ...p, catName: byId[p.cat].name, accent: byId[p.cat].accent, priceText: '$' + p.price.toFixed(2) })),
       hours: HOURS.map((h, i) => ({ ...h, color: i === clock.day ? '#eaffe9' : '#b3b3bb', weight: i === clock.day ? 700 : 400 })),
       openNow, closedNow: !!today && !openNow,
       shopChips: [this.chip('shop', 'all', 'All'), ...CATEGORIES.map(c => this.chip('shop', c.id, c.name))],
