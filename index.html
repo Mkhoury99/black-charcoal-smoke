@@ -1,368 +1,862 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Black Charcoal Smoke &amp; Vape | Woodstock, GA</title>
 <meta name="description" content="Black Charcoal Smoke and Vape in Woodstock, Georgia. Vapes, hookah, tobacco, CBD, and accessories. 6845 GA-92, Suite 120. Call (678) 653-8893.">
 <meta name="theme-color" content="#0a0a0c">
-<link rel="icon" href="images/mark-icon.png">
-<style>
-@font-face { font-family: Anton; font-weight: 400; font-display: swap; src: url("fonts/anton-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: Outfit; font-weight: 400; font-display: swap; src: url("fonts/outfit-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: Outfit; font-weight: 600; font-display: swap; src: url("fonts/outfit-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: Outfit; font-weight: 700; font-display: swap; src: url("fonts/outfit-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: Pacifico; font-weight: 400; font-display: swap; src: url("fonts/pacifico-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-* { box-sizing: border-box; }
-html, body { margin: 0; min-height: 100%; background: #0a0a0c; color: #e8e8ea; font-family: Outfit, system-ui, sans-serif; }
-a { color: #39ff5c; }
-img { max-width: 100%; }
-button, input, select { font-family: inherit; }
-.wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-header { position: sticky; top: 0; z-index: 20; background: rgba(10,10,12,.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.06); }
-.head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
-.brand img { width: 46px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(57,255,92,.45)); }
-.brand strong { font-family: Anton, Impact, sans-serif; font-weight: 400; letter-spacing: .06em; font-size: 18px; color: #eaffe9; text-shadow: 0 0 10px rgba(57,255,92,.7); display: block; line-height: 1; }
-.brand span { display: block; font-size: 10px; letter-spacing: .28em; color: #9a9aa3; margin-top: 3px; }
-nav { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-nav a { padding: 10px 12px; min-height: 44px; display: flex; align-items: center; text-decoration: none; color: #c9c9d1; font-size: 14px; font-weight: 600; }
-nav a:hover { color: #fff; }
-.hero { position: relative; overflow: hidden; min-height: min(88vh, 760px); display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 100%, #131418 0%, #0a0a0c 65%); }
-.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.frame { position: absolute; inset: 14px; border: 2px solid rgba(57,255,92,.55); border-radius: 6px; box-shadow: 0 0 14px rgba(57,255,92,.45), inset 0 0 14px rgba(57,255,92,.25); pointer-events: none; }
-.hero-copy { position: relative; z-index: 1; text-align: center; padding: 84px 24px 110px; max-width: 960px; }
-.kicker { font-size: 12px; letter-spacing: .34em; color: #e3efff; text-shadow: 0 0 8px #4d8dff; }
-.hero-mark { width: min(420px, 86vw); margin: 18px auto 8px; filter: drop-shadow(0 0 18px rgba(57,255,92,.35)); }
-h1 { margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(52px, 12vw, 120px); line-height: .92; color: #eefff0; text-shadow: 0 0 6px #39ff5c, 0 0 22px #39ff5c; }
-.sub { margin-top: 14px; font-family: Anton, Impact, sans-serif; font-size: clamp(20px, 4vw, 36px); letter-spacing: .28em; }
-.script { margin-top: 18px; font-family: Pacifico, cursive; font-size: clamp(24px, 4.6vw, 42px); color: #ffe9f8; text-shadow: 0 0 8px #ff3ec8, 0 0 26px #ff3ec8; transform: rotate(-3deg); }
-.actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
-.btn { min-height: 52px; padding: 0 26px; display: inline-flex; align-items: center; border-radius: 12px; text-decoration: none; font-weight: 700; }
-.btn.green { background: #39ff5c; color: #06140a; box-shadow: 0 0 24px rgba(57,255,92,.5); }
-.btn.pink { border: 1px solid rgba(255,62,200,.7); color: #ffe9f8; background: rgba(255,62,200,.06); }
-.ticker { position: absolute; left: 0; right: 0; bottom: 34px; overflow: hidden; pointer-events: none; }
-.ticker div { display: flex; gap: 44px; width: max-content; animation: slide 40s linear infinite; font-size: 13px; letter-spacing: .3em; color: #e3efff; }
-@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-section { padding: 72px 0; }
-.script-label { font-family: Pacifico, cursive; font-size: 22px; color: #ffe9f8; text-shadow: 0 0 8px #ff3ec8; }
-h2 { margin: 6px 0 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(34px, 5vw, 54px); letter-spacing: .03em; }
-.row { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 22px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
-.card { background: #14151a; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.06); display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-.card .photo { aspect-ratio: 1; background: radial-gradient(circle at 50% 42%, rgba(57,255,92,.16), transparent 58%), repeating-linear-gradient(135deg, #1b1c21 0 10px, #171820 10px 20px); display: flex; align-items: center; justify-content: center; position: relative; }
-.card .photo img { width: 100%; height: 100%; object-fit: cover; }
-.card .photo .fallback { width: 78%; height: 58%; object-fit: contain; }
-.card .body { padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
-.cat { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #8a8a94; }
-.name { font-size: 15px; font-weight: 600; line-height: 1.3; }
-.price { margin-top: 6px; color: #c9c9d1; font-weight: 600; }
-.flag { position: absolute; top: 10px; left: 10px; padding: 4px 9px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
-.flag.on { background: rgba(57,255,92,.15); color: #eaffe9; border: 1px solid rgba(57,255,92,.6); }
-.flag.off { background: rgba(10,10,12,.75); color: #ffd6f2; border: 1px solid rgba(255,62,200,.55); }
-.sold .name, .sold .price { opacity: .72; }
-.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 22px; }
-.chips button { min-height: 40px; padding: 0 16px; border-radius: 999px; cursor: pointer; background: transparent; color: #c9c9d1; border: 1px solid rgba(255,255,255,.16); }
-.chips button.on { background: rgba(57,255,92,.14); color: #eaffe9; border-color: rgba(57,255,92,.8); box-shadow: 0 0 14px rgba(57,255,92,.35); }
-.brands { background: #0d0d10; border-top: 1px solid rgba(255,255,255,.05); border-bottom: 1px solid rgba(255,255,255,.05); text-align: center; }
-.brand-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
-.pill { min-height: 64px; padding: 0 28px; display: flex; align-items: center; border-radius: 10px; font-family: Anton, Impact, sans-serif; font-size: 22px; letter-spacing: .12em; border: 1px solid rgba(57,255,92,.6); color: #eaffe9; box-shadow: 0 0 14px rgba(57,255,92,.25); }
-.about { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px; align-items: center; }
-.about p { font-size: 17px; line-height: 1.6; color: #c2c2ca; }
-.about-mark { border-radius: 16px; border: 1px solid rgba(255,62,200,.5); box-shadow: 0 0 22px rgba(255,62,200,.25); background: #101114; padding: 18px; }
-.panel { background: #0d0d10; border-top: 1px solid rgba(255,255,255,.05); }
-.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px; }
-.hours div { display: flex; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
-.badge { padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .14em; }
-.badge.open { color: #eaffe9; border: 1px solid rgba(57,255,92,.7); box-shadow: 0 0 12px rgba(57,255,92,.45); }
-.badge.closed { color: #ffd6f2; border: 1px solid rgba(255,62,200,.7); }
-.map { border-radius: 16px; overflow: hidden; border: 1px solid rgba(77,141,255,.5); aspect-ratio: 16/10; }
-.map iframe { width: 100%; height: 100%; border: 0; filter: invert(.92) hue-rotate(180deg) saturate(.6); }
-.contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-.contact a { display: flex; flex-direction: column; gap: 6px; padding: 24px; border-radius: 16px; background: #14151a; text-decoration: none; }
-.contact a strong { color: #eaffe9; font-size: 20px; }
-.contact a em { font-style: normal; font-size: 12px; letter-spacing: .24em; color: #8a8a94; }
-footer { border-top: 1px solid rgba(255,255,255,.06); padding: 36px 0 48px; color: #7a7a84; font-size: 13px; }
-.warn { margin: 14px 0; padding: 12px 14px; border: 1px solid rgba(255,255,255,.14); border-radius: 8px; max-width: 720px; color: #c2c2ca; }
-.gate { position: fixed; inset: 0; z-index: 50; background: rgba(6,6,8,.9); backdrop-filter: blur(14px); display: flex; align-items: center; justify-content: center; padding: 20px; }
-.gate .box { width: min(420px, 100%); background: #111215; border: 1px solid rgba(57,255,92,.55); border-radius: 18px; padding: 32px 24px; text-align: center; box-shadow: 0 0 34px rgba(57,255,92,.2); }
-.gate img { width: 180px; }
-.gate h2 { font-size: 32px; color: #eaffe9; text-shadow: 0 0 12px #39ff5c; }
-.gate .choices { display: flex; gap: 12px; }
-.gate button { flex: 1; min-height: 52px; border-radius: 12px; cursor: pointer; font-weight: 700; }
-.gate .yes { border: 0; background: #39ff5c; color: #06140a; }
-.gate .no { border: 1px solid rgba(255,255,255,.18); background: transparent; color: #e8e8ea; }
-.hidden { display: none !important; }
-.page { display: none; }
-.page.on { display: block; }
-.empty { color: #8a8a94; padding: 24px 0; }
-</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24'%3E%3Cpath d='M2 20 L2 7 L9 13 L16 2 L23 13 L30 7 L30 20 Z' fill='%23e3b341'/%3E%3C/svg%3E">
+<script>
+window.__resources = {
+  "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "vendor/react.production.min.js",
+  "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "vendor/react-dom.production.min.js"
+};
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="runtime.js"></script>
+
 </head>
 <body>
-<div id="gate" class="gate">
-  <div class="box">
-    <img src="images/mark.png" alt="">
-    <div style="letter-spacing:.22em;color:#9a9aa3;font-size:13px">BLACK CHARCOAL SMOKE &amp; VAPE</div>
-    <h2>ARE YOU 21 OR OLDER?</h2>
-    <p style="color:#b3b3bb">You must be 21+ to enter this site. Tobacco, nicotine, and hemp products are sold in store.</p>
-    <p id="denied" class="hidden" style="color:#ffd6f2">Sorry — you must be 21 or older to enter.</p>
-    <div class="choices">
-      <button class="yes" id="yes">Yes, I'm 21+</button>
-      <button class="no" id="no">No</button>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* vietnamese */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/anton-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/anton-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/anton-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/outfit-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/outfit-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/outfit-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/outfit-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/outfit-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/outfit-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/outfit-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/outfit-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/pacifico-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/pacifico-cyrillic.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/pacifico-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/pacifico-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/pacifico-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+html,body,#dc-root,#dc-root>.sc-host{height:auto!important;min-height:100%}
+body{margin:0;background:#0a0a0c;color:#e8e8ea;font-family:Outfit,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#39ff5c}a:hover{color:#fff}
+input,select{font-family:Outfit,system-ui,sans-serif}
+input::placeholder{color:#6c6d76}
+@keyframes neonflicker{0%,91%,100%{opacity:1}92%{opacity:.55}93%{opacity:1}96%{opacity:.8}97%{opacity:1}}
+@keyframes tickerslide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}}
+</style>
+</helmet>
+
+<sc-if value="{{ showGate }}" hint-placeholder-val="{{ true }}">
+<div style="position:fixed;inset:0;z-index:100;background:rgba(6,6,8,.88);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:center;padding:20px">
+  <div style="width:100%;max-width:420px;background:#111215;border:1px solid rgba(57,255,92,.55);box-shadow:0 0 34px rgba(57,255,92,.25),inset 0 0 40px rgba(57,255,92,.05);border-radius:18px;padding:36px 28px;text-align:center">
+    <svg sc-camel-view-box="0 0 32 24" width="44" height="33" style="display:block;margin:0 auto 10px;filter:drop-shadow(0 0 8px rgba(227,179,65,.6))"><path d="M2 20 L2 7 L9 13 L16 2 L23 13 L30 7 L30 20 Z" fill="#e3b341"></path></svg>
+    <div style="font-family:Anton,Impact,sans-serif;font-size:14px;letter-spacing:.24em;color:#9a9aa3">BLACK CHARCOAL SMOKE &amp; VAPE</div>
+    <h2 style="margin:18px 0 8px;font-family:Anton,Impact,sans-serif;font-size:34px;line-height:1.05;letter-spacing:.02em;color:#eaffe9;text-shadow:0 0 8px #39ff5c,0 0 24px rgba(57,255,92,.7)">ARE YOU 21 OR OLDER?</h2>
+    <p style="margin:0 0 26px;color:#b3b3bb;font-size:15px;line-height:1.5">You must be 21+ to enter this site and purchase tobacco, nicotine, or hemp products.</p>
+    <sc-if value="{{ denied }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:0 0 18px;padding:12px;border-radius:10px;background:rgba(255,62,200,.1);border:1px solid rgba(255,62,200,.4);color:#ffd6f2;font-size:14px">Sorry — you must be 21 or older to enter.</p>
+    </sc-if>
+    <div style="display:flex;gap:12px">
+      <button sc-camel-on-click="{{ confirmAge }}" style="flex:1;min-height:52px;border:0;border-radius:12px;background:#39ff5c;color:#06140a;font:700 17px Outfit,sans-serif;cursor:pointer;box-shadow:0 0 18px rgba(57,255,92,.45)">Yes, I'm 21+</button>
+      <button sc-camel-on-click="{{ denyAge }}" style="flex:1;min-height:52px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:transparent;color:#e8e8ea;font:600 17px Outfit,sans-serif;cursor:pointer">No</button>
     </div>
   </div>
 </div>
+</sc-if>
 
-<header>
-  <div class="wrap head">
-    <a class="brand" href="#home"><img src="images/mark.png" alt=""><span><strong>BLACK CHARCOAL</strong><span>SMOKE &amp; VAPE</span></span></a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#location">Hours</a>
-      <a href="#contact">Contact</a>
+<header style="position:sticky;top:0;z-index:50;background:rgba(10,10,12,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)">
+  <div style="max-width:1200px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <a href="#home" sc-camel-on-click="{{ goHome }}" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;min-height:44px">
+      <svg sc-camel-view-box="0 0 32 24" width="28" height="21" style="filter:drop-shadow(0 0 6px rgba(227,179,65,.6))"><path d="M2 20 L2 7 L9 13 L16 2 L23 13 L30 7 L30 20 Z" fill="#e3b341"></path></svg>
+      <span style="display:flex;flex-direction:column;line-height:1">
+        <span style="font-family:Anton,Impact,sans-serif;font-size:18px;letter-spacing:.06em;color:#eaffe9;text-shadow:0 0 10px rgba(57,255,92,.7)">BLACK CHARCOAL</span>
+        <span style="font-size:10px;letter-spacing:.28em;color:#9a9aa3;margin-top:3px">SMOKE &amp; VAPE</span>
+      </span>
+    </a>
+    <nav style="display:flex;gap:4px;align-items:center;flex-wrap:wrap">
+      <a href="#home" sc-camel-on-click="{{ goHome }}" style="padding:10px 12px;min-height:44px;display:flex;align-items:center;text-decoration:none;color:#c9c9d1;font-size:14px;font-weight:500" style-hover="color:#fff">Home</a>
+      <a href="#shop" sc-camel-on-click="{{ goShop }}" style="padding:10px 12px;min-height:44px;display:flex;align-items:center;text-decoration:none;color:#c9c9d1;font-size:14px;font-weight:500" style-hover="color:#fff">Shop</a>
+      <a href="#location" sc-camel-on-click="{{ goHours }}" style="padding:10px 12px;min-height:44px;display:flex;align-items:center;text-decoration:none;color:#c9c9d1;font-size:14px;font-weight:500" style-hover="color:#fff">Hours</a>
+      <a href="#contact" sc-camel-on-click="{{ goContact }}" style="padding:10px 12px;min-height:44px;display:flex;align-items:center;text-decoration:none;color:#c9c9d1;font-size:14px;font-weight:500" style-hover="color:#fff">Contact</a>
+      <a href="#order" sc-camel-on-click="{{ goOrder }}" style="margin-left:6px;padding:0 16px;min-height:44px;display:flex;align-items:center;text-decoration:none;border-radius:10px;background:#39ff5c;color:#06140a;font-size:14px;font-weight:700;box-shadow:0 0 16px rgba(57,255,92,.4)" style-hover="background:#6dff86">Order Online</a>
+      <sc-if value="{{ onOrder }}" hint-placeholder-val="{{ false }}">
+        <button sc-camel-on-click="{{ openCart }}" style="margin-left:6px;padding:0 16px;min-height:44px;display:flex;align-items:center;gap:8px;border:1px solid rgba(57,255,92,.6);border-radius:10px;background:rgba(57,255,92,.08);color:#eaffe9;font:700 14px Outfit,sans-serif;cursor:pointer">Cart <span style="min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:#06140a;color:#39ff5c;display:inline-flex;align-items:center;justify-content:center;font-size:12px">{{ cartCount }}</span></button>
+      </sc-if>
     </nav>
   </div>
 </header>
 
-<div id="home" class="page">
-  <section class="hero">
-    <canvas id="smoke"></canvas>
-    <div class="frame"></div>
-    <div class="hero-copy">
-      <div class="kicker">SINCE 2020 · WOODSTOCK, GEORGIA</div>
-      <img class="hero-mark" src="images/mark.png" alt="Black Charcoal skull mark">
-      <h1>BLACK<br>CHARCOAL</h1>
-      <div class="sub">SMOKE &amp; VAPE</div>
-      <div class="script">Good people. Good vibes. Always.</div>
-      <div class="actions">
-        <a class="btn green" href="#shop">Browse the Shop</a>
-        <a class="btn pink" href="tel:+16786538893">Call (678) 653-8893</a>
-      </div>
+<sc-if value="{{ onHome }}" hint-placeholder-val="{{ true }}">
+<div>
+<section data-screen-label="Hero" style="position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 100%,#131418 0%,#0a0a0c 65%);min-height:min(88vh,760px);display:flex;align-items:center;justify-content:center">
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
+  <div style="position:absolute;inset:14px;border:2px solid rgba(57,255,92,.55);border-radius:6px;box-shadow:0 0 14px rgba(57,255,92,.45),inset 0 0 14px rgba(57,255,92,.25);pointer-events:none"></div>
+  <div style="position:relative;z-index:1;text-align:center;padding:84px 24px 110px;max-width:960px;width:100%">
+    <div style="font-size:12px;letter-spacing:.34em;color:#e3efff;text-shadow:0 0 8px #4d8dff,0 0 18px rgba(77,141,255,.6);margin-bottom:22px">EST. 2024 · WOODSTOCK, GEORGIA</div>
+    <svg sc-camel-view-box="0 0 32 24" width="64" height="48" style="display:block;margin:0 auto 6px;filter:drop-shadow(0 0 12px rgba(227,179,65,.7))"><path d="M2 20 L2 7 L9 13 L16 2 L23 13 L30 7 L30 20 Z" fill="#e3b341"></path></svg>
+    <h1 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(52px,12vw,138px);line-height:.94;letter-spacing:.01em;color:#eefff0;text-shadow:0 0 6px #39ff5c,0 0 22px #39ff5c,0 0 56px rgba(57,255,92,.55);animation:neonflicker 9s infinite">BLACK<br>CHARCOAL</h1>
+    <div style="margin-top:14px;font-family:Anton,Impact,sans-serif;font-size:clamp(20px,4vw,38px);letter-spacing:.3em;color:#ffffff">SMOKE &amp; VAPE</div>
+    <div style="margin-top:22px;font-family:Pacifico,cursive;font-size:clamp(24px,4.6vw,44px);line-height:1.2;color:#ffe9f8;text-shadow:0 0 8px #ff3ec8,0 0 26px #ff3ec8,0 0 60px rgba(255,62,200,.5);transform:rotate(-3deg)">Good people. Good vibes. Always.</div>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px">
+      <a href="#order" sc-camel-on-click="{{ goOrder }}" style="min-height:54px;padding:0 30px;display:inline-flex;align-items:center;border-radius:12px;background:#39ff5c;color:#06140a;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 0 24px rgba(57,255,92,.5)" style-hover="background:#6dff86">Order Online</a>
+      <a href="#shop" sc-camel-on-click="{{ goShop }}" style="min-height:54px;padding:0 30px;display:inline-flex;align-items:center;border-radius:12px;border:1px solid rgba(255,62,200,.7);background:rgba(255,62,200,.06);color:#ffe9f8;font-size:16px;font-weight:600;text-decoration:none;box-shadow:0 0 18px rgba(255,62,200,.3),inset 0 0 18px rgba(255,62,200,.08)" style-hover="background:rgba(255,62,200,.16)">Browse the Catalog</a>
     </div>
-    <div class="ticker"><div>
-      <span>VAPES</span><span>HOOKAH</span><span>TOBACCO</span><span>CBD</span><span>DELTA 8</span><span>KRATOM</span><span>GLASS</span><span>ACCESSORIES</span>
-      <span>VAPES</span><span>HOOKAH</span><span>TOBACCO</span><span>CBD</span><span>DELTA 8</span><span>KRATOM</span><span>GLASS</span><span>ACCESSORIES</span>
-    </div></div>
-  </section>
-  <section>
-    <div class="wrap">
-      <div class="row">
-        <div><div class="script-label">Fresh on the shelf</div><h2>FEATURED</h2></div>
-        <a href="#shop">Full shop →</a>
-      </div>
-      <div id="featured" class="grid"></div>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:34px;overflow:hidden;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)">
+    <div style="display:flex;width:max-content;gap:0;animation:tickerslide 40s linear infinite">
+      <div style="display:flex;gap:44px;padding-right:44px;font-size:13px;letter-spacing:.3em;white-space:nowrap;color:#e3efff;text-shadow:0 0 6px #4d8dff,0 0 16px rgba(77,141,255,.7)"><span>VAPES</span><span>HOOKAH</span><span>TOBACCO</span><span>CBD</span><span>DELTA 8</span><span>KRATOM</span><span>GLASS</span><span>ACCESSORIES</span><span>PREMIUM BRANDS</span></div>
+      <div style="display:flex;gap:44px;padding-right:44px;font-size:13px;letter-spacing:.3em;white-space:nowrap;color:#e3efff;text-shadow:0 0 6px #4d8dff,0 0 16px rgba(77,141,255,.7)"><span>VAPES</span><span>HOOKAH</span><span>TOBACCO</span><span>CBD</span><span>DELTA 8</span><span>KRATOM</span><span>GLASS</span><span>ACCESSORIES</span><span>PREMIUM BRANDS</span></div>
     </div>
-  </section>
-  <section class="brands">
-    <div class="wrap">
-      <div class="kicker" style="margin-bottom:22px">BRANDS AVAILABLE</div>
-      <div class="brand-row">
-        <div class="pill">RAW</div>
-        <div class="pill" style="color:#ffe9f8;border-color:rgba(255,62,200,.6)">MARLBORO</div>
-        <div class="pill" style="color:#e3efff;border-color:rgba(77,141,255,.6)">AL FAKHER</div>
-        <div class="pill">FUMARI</div>
-        <div class="pill" style="color:#ffe9f8;border-color:rgba(255,62,200,.6)">THE HEMP DOCTOR</div>
-      </div>
+  </div>
+</section>
+
+<section id="products" data-screen-label="Featured Products" style="max-width:1200px;margin:0 auto;padding:80px 20px 40px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px">
+    <div>
+      <div style="font-family:Pacifico,cursive;font-size:22px;color:#ffe9f8;text-shadow:0 0 8px #ff3ec8,0 0 20px rgba(255,62,200,.6)">Fresh on the shelf</div>
+      <h2 style="margin:6px 0 0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,5vw,54px);line-height:1;letter-spacing:.03em;color:#fff">FEATURED PRODUCTS</h2>
     </div>
-  </section>
-  <section>
-    <div class="wrap about">
-      <div>
-        <div class="script-label" style="color:#eaffe9;text-shadow:0 0 8px #39ff5c">Stay lit</div>
-        <h2>SAME GOOD VIBES.<br>DIFFERENT LEVEL.</h2>
-        <p>Black Charcoal is Woodstock's smoke, vape, and hookah shop — a clean, well-lit space stocked wall to wall with premium brands, hookahs, glass, and everything in between.</p>
-        <p>Come in, ask questions, and leave with the right thing. Good people, good vibes, every day.</p>
-      </div>
-      <div class="about-mark"><img src="images/mark.png" alt="Black Charcoal mark"></div>
-    </div>
-  </section>
-  <section class="panel" id="location">
-    <div class="wrap split">
-      <div>
-        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-          <h2>HOURS</h2>
-          <span id="openBadge" class="badge"></span>
+    <a href="#shop" sc-camel-on-click="{{ goShop }}" style="min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#39ff5c;font-weight:600;font-size:15px" style-hover="color:#fff">Full catalog →</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px">
+    <sc-for list="{{ featured }}" as="p" hint-placeholder-count="6">
+      <a href="#shop" sc-camel-on-click="{{ goShop }}" style="display:flex;flex-direction:column;background:#14151a;border-radius:14px;overflow:hidden;text-decoration:none;color:#e8e8ea;border:1px solid rgba(255,255,255,.06);position:relative" style-hover="border-color:rgba(255,255,255,.18)">
+        <div style="aspect-ratio:1/1;background:radial-gradient(circle at 50% 42%,rgba(227,179,65,.18),transparent 58%),repeating-linear-gradient(135deg,#1b1c21 0 10px,#171820 10px 20px);display:flex;align-items:center;justify-content:center"><svg sc-camel-view-box="0 0 32 24" width="52" height="39" aria-hidden="true" style="filter:drop-shadow(0 0 8px rgba(227,179,65,.55))"><path d="M2 20 L2 7 L9 13 L16 2 L23 13 L30 7 L30 20 Z" fill="#e3b341"></path></svg></div>
+        <div style="padding:14px 14px 18px;display:flex;flex-direction:column;gap:4px">
+          <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8a8a94">{{ p.catName }}</div>
+          <div style="font-size:15px;font-weight:600;line-height:1.3;color:#f2f2f4">{{ p.name }}</div>
+          <div style="font-size:15px;font-weight:600;color:#c9c9d1;margin-top:6px">{{ p.priceText }}</div>
         </div>
-        <div class="hours" id="hours"></div>
-      </div>
-      <div>
-        <h2>LOCATION</h2>
-        <p style="font-weight:600">6845 GA-92, Suite 120</p>
-        <p style="color:#b3b3bb;margin-top:0">Woodstock, GA 30189</p>
-        <div class="map"><iframe title="Map" src="https://www.google.com/maps?q=6845+GA-92+Suite+120+Woodstock+GA+30189&output=embed" loading="lazy"></iframe></div>
-        <p><a class="btn green" style="margin-top:14px" href="https://www.google.com/maps/dir/?api=1&destination=6845+GA-92+Suite+120+Woodstock+GA+30189" target="_blank" rel="noopener">Get directions</a></p>
-      </div>
-    </div>
-  </section>
-  <section id="contact">
-    <div class="wrap">
-      <div class="script-label" style="color:#e3efff;text-shadow:0 0 8px #4d8dff">Say hey</div>
-      <h2>CONTACT</h2>
-      <div class="contact" style="margin-top:22px">
-        <a href="tel:+16786538893" style="border:1px solid rgba(57,255,92,.45)"><em>CALL</em><strong>(678) 653-8893</strong></a>
-        <a href="mailto:blackcharcoal2020@gmail.com" style="border:1px solid rgba(255,62,200,.45)"><em>EMAIL</em><strong>blackcharcoal2020@gmail.com</strong></a>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=6845+GA-92+Suite+120+Woodstock+GA+30189" target="_blank" rel="noopener" style="border:1px solid rgba(77,141,255,.45)"><em>VISIT</em><strong>6845 GA-92, Suite 120, Woodstock, GA 30189</strong></a>
-      </div>
-    </div>
-  </section>
-</div>
+        <div style="height:3px;background:{{ p.accent }};box-shadow:0 0 12px {{ p.accent }},0 0 24px {{ p.accent }}"></div>
+      </a>
+    </sc-for>
+  </div>
+</section>
 
-<div id="shop" class="page">
-  <section style="padding-bottom:20px">
-    <div class="wrap">
-      <div class="script-label">Everything on the wall</div>
-      <h2 style="font-size:clamp(44px,8vw,84px)">THE SHOP</h2>
-      <p style="max-width:560px;color:#b3b3bb">What we carry in the store. Call (678) 653-8893 and we'll set something aside.</p>
-      <div id="chips" class="chips"></div>
+<section data-screen-label="Brands" style="padding:56px 20px;background:#0d0d10;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="text-align:center;font-size:12px;letter-spacing:.34em;color:#8a8a94;margin-bottom:26px">BRANDS AVAILABLE</div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px">
+      <div style="min-height:64px;padding:0 28px;display:flex;align-items:center;border-radius:10px;font-family:Anton,Impact,sans-serif;font-size:22px;letter-spacing:.12em;color:#eaffe9;border:1px solid rgba(57,255,92,.6);box-shadow:0 0 14px rgba(57,255,92,.35),inset 0 0 14px rgba(57,255,92,.12)">RAW</div>
+      <div style="min-height:64px;padding:0 28px;display:flex;align-items:center;border-radius:10px;font-family:Anton,Impact,sans-serif;font-size:22px;letter-spacing:.12em;color:#ffe9f8;border:1px solid rgba(255,62,200,.6);box-shadow:0 0 14px rgba(255,62,200,.35),inset 0 0 14px rgba(255,62,200,.12)">MARLBORO</div>
+      <div style="min-height:64px;padding:0 28px;display:flex;align-items:center;border-radius:10px;font-family:Anton,Impact,sans-serif;font-size:22px;letter-spacing:.12em;color:#e3efff;border:1px solid rgba(77,141,255,.6);box-shadow:0 0 14px rgba(77,141,255,.35),inset 0 0 14px rgba(77,141,255,.12)">AL FAKHER</div>
+      <div style="min-height:64px;padding:0 28px;display:flex;align-items:center;border-radius:10px;font-family:Anton,Impact,sans-serif;font-size:22px;letter-spacing:.12em;color:#eaffe9;border:1px solid rgba(57,255,92,.6);box-shadow:0 0 14px rgba(57,255,92,.35),inset 0 0 14px rgba(57,255,92,.12)">FUMARI</div>
+      <div style="min-height:64px;padding:0 28px;display:flex;align-items:center;border-radius:10px;font-family:Anton,Impact,sans-serif;font-size:22px;letter-spacing:.12em;color:#ffe9f8;border:1px solid rgba(255,62,200,.6);box-shadow:0 0 14px rgba(255,62,200,.35),inset 0 0 14px rgba(255,62,200,.12)">THE HEMP DOCTOR <span style="font-size:13px;letter-spacing:.2em;margin-left:10px;color:#ff9fdf">DELTA 8</span></div>
     </div>
-  </section>
-  <section style="padding-top:10px">
-    <div class="wrap">
-      <div class="row"><h2 id="shopTitle" style="font-size:28px">ALL PRODUCTS</h2><span id="shopCount" style="color:#8a8a94"></span></div>
-      <div id="shopGrid" class="grid"></div>
-    </div>
-  </section>
-</div>
+  </div>
+</section>
 
-<footer>
-  <div class="wrap">
-    <div class="brand"><img src="images/mark.png" alt="" style="width:36px"><strong style="font-family:Anton,Impact,sans-serif;letter-spacing:.08em">BLACK CHARCOAL SMOKE &amp; VAPE</strong></div>
-    <p class="warn"><strong style="color:#fff">WARNING:</strong> This product contains nicotine. Nicotine is an addictive chemical. Must be 21 or older to purchase.</p>
-    <div>© 2026 Black Charcoal Smoke and Vape · 6845 GA-92, Suite 120, Woodstock, GA 30189 · (678) 653-8893</div>
+<section id="about" data-screen-label="About" style="max-width:1200px;margin:0 auto;padding:80px 20px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px;align-items:center">
+    <div>
+      <div style="font-family:Pacifico,cursive;font-size:22px;color:#eaffe9;text-shadow:0 0 8px #39ff5c,0 0 20px rgba(57,255,92,.6)">Stay lit</div>
+      <h2 style="margin:6px 0 18px;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,5vw,54px);line-height:1;letter-spacing:.03em;color:#fff">SAME GOOD VIBES.<br>DIFFERENT LEVEL.</h2>
+      <p style="margin:0 0 14px;font-size:17px;line-height:1.6;color:#c2c2ca;text-wrap:pretty">Black Charcoal is Woodstock's smoke, vape, and hookah shop — a clean, well-lit space stocked wall to wall with premium brands, hookahs, glass, and everything in between.</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#c2c2ca;text-wrap:pretty">Come in, ask questions, and leave with the right thing. Good people, good vibes, every day.</p>
+    </div>
+    <div style="aspect-ratio:4/3;border-radius:16px;background:radial-gradient(circle at 50% 40%,rgba(255,62,200,.18),transparent 55%),repeating-linear-gradient(135deg,#1b1c21 0 10px,#171820 10px 20px);border:1px solid rgba(255,62,200,.5);box-shadow:0 0 22px rgba(255,62,200,.3),inset 0 0 22px rgba(255,62,200,.1);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;gap:14px"><svg sc-camel-view-box="0 0 32 24" width="72" height="54" aria-hidden="true" style="filter:drop-shadow(0 0 12px rgba(227,179,65,.7))"><path d="M2 20 L2 7 L9 13 L16 2 L23 13 L30 7 L30 20 Z" fill="#e3b341"></path></svg><div style="font-family:Pacifico,cursive;font-size:clamp(26px,4vw,40px);line-height:1.2;color:#ffe9f8;text-shadow:0 0 8px #ff3ec8,0 0 26px #ff3ec8">Good people. Good vibes. Always.</div><div style="font-size:13px;letter-spacing:.22em;color:#eaffe9">WOODSTOCK, GEORGIA</div></div>
+  </div>
+</section>
+
+<section id="location" data-screen-label="Hours &amp; Location" style="background:#0d0d10;border-top:1px solid rgba(255,255,255,.05);padding:80px 20px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px">
+    <div>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <h2 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,5vw,54px);line-height:1;letter-spacing:.03em;color:#fff">HOURS</h2>
+        <sc-if value="{{ openNow }}" hint-placeholder-val="{{ true }}"><span style="padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.14em;color:#eaffe9;border:1px solid rgba(57,255,92,.7);box-shadow:0 0 12px rgba(57,255,92,.5);background:rgba(57,255,92,.08)">OPEN NOW</span></sc-if>
+        <sc-if value="{{ closedNow }}" hint-placeholder-val="{{ false }}"><span style="padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.14em;color:#ffd6f2;border:1px solid rgba(255,62,200,.7);box-shadow:0 0 12px rgba(255,62,200,.4);background:rgba(255,62,200,.08)">CLOSED · OPENS 10AM</span></sc-if>
+      </div>
+      <div style="margin-top:22px;display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.08)">
+        <sc-for list="{{ hours }}" as="h" hint-placeholder-count="7">
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:16px;color:{{ h.color }};font-weight:{{ h.weight }}"><span>{{ h.d }}</span><span>{{ h.text }}</span></div>
+        </sc-for>
+      </div>
+    </div>
+    <div>
+      <h2 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,5vw,54px);line-height:1;letter-spacing:.03em;color:#fff">LOCATION</h2>
+      <p style="margin:18px 0 6px;font-size:18px;color:#f2f2f4;font-weight:600">6845 GA-92, Suite 120</p>
+      <p style="margin:0 0 18px;font-size:16px;color:#b3b3bb">Woodstock, GA 30189</p>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(77,141,255,.5);box-shadow:0 0 22px rgba(77,141,255,.3);aspect-ratio:16/10;background:#14151a">
+        <iframe title="Map to Black Charcoal Smoke and Vape" src="https://www.google.com/maps?q=6845+GA-92+Suite+120+Woodstock+GA+30189&amp;output=embed" style="width:100%;height:100%;border:0;filter:invert(.92) hue-rotate(180deg) saturate(.6)" loading="lazy"></iframe>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=6845+GA-92+Suite+120+Woodstock+GA+30189" target="_blank" rel="noopener" style="margin-top:16px;min-height:50px;padding:0 24px;display:inline-flex;align-items:center;border-radius:12px;background:#4d8dff;color:#06101f;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 0 18px rgba(77,141,255,.45)" style-hover="background:#7aa9ff">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="Contact" style="max-width:1200px;margin:0 auto;padding:80px 20px">
+  <div style="font-family:Pacifico,cursive;font-size:22px;color:#e3efff;text-shadow:0 0 8px #4d8dff,0 0 20px rgba(77,141,255,.6)">Say hey</div>
+  <h2 style="margin:6px 0 26px;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,5vw,54px);line-height:1;letter-spacing:.03em;color:#fff">CONTACT</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+    <a href="tel:+16786538893" style="display:flex;flex-direction:column;gap:6px;padding:24px;border-radius:16px;background:#14151a;text-decoration:none;border:1px solid rgba(57,255,92,.45);box-shadow:inset 0 -3px 0 #39ff5c,0 0 18px rgba(57,255,92,.2)" style-hover="background:#191a20">
+      <span style="font-size:12px;letter-spacing:.24em;color:#8a8a94">CALL</span>
+      <span style="font-size:22px;font-weight:600;color:#eaffe9">(678) 653-8893</span>
+    </a>
+    <a href="mailto:blackcharcoal2020@gmail.com" style="display:flex;flex-direction:column;gap:6px;padding:24px;border-radius:16px;background:#14151a;text-decoration:none;border:1px solid rgba(255,62,200,.45);box-shadow:inset 0 -3px 0 #ff3ec8,0 0 18px rgba(255,62,200,.2);min-width:0" style-hover="background:#191a20">
+      <span style="font-size:12px;letter-spacing:.24em;color:#8a8a94">EMAIL</span>
+      <span style="font-size:19px;font-weight:600;color:#ffe9f8;overflow-wrap:anywhere">blackcharcoal2020@gmail.com</span>
+    </a>
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=6845+GA-92+Suite+120+Woodstock+GA+30189" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:6px;padding:24px;border-radius:16px;background:#14151a;text-decoration:none;border:1px solid rgba(77,141,255,.45);box-shadow:inset 0 -3px 0 #4d8dff,0 0 18px rgba(77,141,255,.2)" style-hover="background:#191a20">
+      <span style="font-size:12px;letter-spacing:.24em;color:#8a8a94">VISIT</span>
+      <span style="font-size:19px;font-weight:600;color:#e3efff">6845 GA-92, Suite 120, Woodstock, GA 30189</span>
+    </a>
+  </div>
+</section>
+</div>
+</sc-if>
+
+<sc-if value="{{ onShop }}" hint-placeholder-val="{{ false }}">
+<div>
+<section data-screen-label="Catalog header" style="position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#15161b 0%,#0a0a0c 70%);border-bottom:1px solid rgba(255,255,255,.06)">
+  <div style="max-width:1200px;margin:0 auto;padding:56px 20px 28px">
+    <div style="font-family:Pacifico,cursive;font-size:22px;color:#ffe9f8;text-shadow:0 0 8px #ff3ec8,0 0 20px rgba(255,62,200,.6)">Everything on the wall</div>
+    <h1 style="margin:6px 0 10px;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(44px,8vw,84px);line-height:.95;letter-spacing:.02em;color:#eefff0;text-shadow:0 0 6px #39ff5c,0 0 22px rgba(57,255,92,.8)">THE CATALOG</h1>
+    <p style="margin:0 0 28px;max-width:560px;font-size:16px;line-height:1.55;color:#b3b3bb;text-wrap:pretty">What we carry in-store. Items marked <span style="color:#eaffe9;font-weight:600">Delivery</span> can be ordered online; everything else is waiting for you at the counter.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <sc-for list="{{ shopChips }}" as="c" hint-placeholder-count="11">
+        <button sc-camel-on-click="{{ c.select }}" style="min-height:40px;padding:0 16px;border-radius:999px;cursor:pointer;font:500 14px Outfit,sans-serif;background:{{ c.bg }};color:{{ c.color }};border:1px solid {{ c.border }};box-shadow:{{ c.shadow }}">{{ c.name }}</button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Catalog grid" style="max-width:1200px;margin:0 auto;padding:32px 20px 80px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:18px">
+    <h2 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:28px;letter-spacing:.04em;color:#fff">{{ shopActiveName }}</h2>
+    <span style="font-size:13px;color:#8a8a94">{{ shopCountText }}</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px">
+    <sc-for list="{{ shopItems }}" as="p" hint-placeholder-count="8">
+      <div style="display:flex;flex-direction:column;background:#14151a;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.06);position:relative">
+        <div style="aspect-ratio:1/1;background:radial-gradient(circle at 50% 42%,rgba(227,179,65,.18),transparent 58%),repeating-linear-gradient(135deg,#1b1c21 0 10px,#171820 10px 20px);display:flex;align-items:center;justify-content:center"><svg sc-camel-view-box="0 0 32 24" width="52" height="39" aria-hidden="true" style="filter:drop-shadow(0 0 8px rgba(227,179,65,.55))"><path d="M2 20 L2 7 L9 13 L16 2 L23 13 L30 7 L30 20 Z" fill="#e3b341"></path></svg></div>
+        <div style="position:absolute;top:10px;left:10px;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.1em;background:{{ p.tagBg }};color:{{ p.tagColor }};border:1px solid {{ p.tagBorder }}">{{ p.tag }}</div>
+        <div style="padding:14px 14px 16px;display:flex;flex-direction:column;gap:4px;flex:1">
+          <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8a8a94">{{ p.catName }}</div>
+          <div style="font-size:15px;font-weight:600;line-height:1.3;color:#f2f2f4;flex:1">{{ p.name }}</div>
+          <div style="font-size:15px;font-weight:600;color:#c9c9d1;margin-top:6px">{{ p.priceText }}</div>
+        </div>
+        <div style="height:3px;background:{{ p.accent }};box-shadow:0 0 12px {{ p.accent }},0 0 24px {{ p.accent }}"></div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="margin-top:40px;padding:26px;border-radius:16px;background:#0d0d10;border:1px solid rgba(57,255,92,.35);box-shadow:inset 0 0 30px rgba(57,255,92,.06);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+    <div>
+      <div style="font-family:Anton,Impact,sans-serif;font-size:22px;letter-spacing:.04em;color:#fff">WANT IT DELIVERED?</div>
+      <div style="font-size:14px;color:#b3b3bb;margin-top:4px">Order ahead online, or call (678) 653-8893 and we'll set it aside.</div>
+    </div>
+    <a href="#order" sc-camel-on-click="{{ goOrder }}" style="min-height:48px;padding:0 24px;display:inline-flex;align-items:center;border-radius:12px;background:#39ff5c;color:#06140a;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 0 18px rgba(57,255,92,.45)" style-hover="background:#6dff86">Order Online</a>
+  </div>
+</section>
+</div>
+</sc-if>
+
+<sc-if value="{{ orderBrowsing }}" hint-placeholder-val="{{ false }}">
+<div>
+<section data-screen-label="Order header" style="background:radial-gradient(ellipse at 50% 0%,#15161b 0%,#0a0a0c 70%);border-bottom:1px solid rgba(255,255,255,.06)">
+  <div style="max-width:1200px;margin:0 auto;padding:56px 20px 28px">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <div style="font-family:Pacifico,cursive;font-size:22px;color:#eaffe9;text-shadow:0 0 8px #39ff5c,0 0 20px rgba(57,255,92,.6)">Order ahead</div>
+      <span style="padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.14em;color:#eaffe9;border:1px solid rgba(57,255,92,.6);background:rgba(57,255,92,.08)">REQUEST BY EMAIL</span>
+    </div>
+    <h1 style="margin:6px 0 10px;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(44px,8vw,84px);line-height:.95;letter-spacing:.02em;color:#fff">ORDER ONLINE</h1>
+    <p style="margin:0 0 28px;max-width:600px;font-size:16px;line-height:1.55;color:#b3b3bb;text-wrap:pretty">Local delivery in and around Woodstock. Some products are <span style="color:#eaffe9;font-weight:600">in-store only</span> by law — those link you to directions instead of a cart.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <sc-for list="{{ orderChips }}" as="c" hint-placeholder-count="11">
+        <button sc-camel-on-click="{{ c.select }}" style="min-height:40px;padding:0 16px;border-radius:999px;cursor:pointer;font:500 14px Outfit,sans-serif;background:{{ c.bg }};color:{{ c.color }};border:1px solid {{ c.border }};box-shadow:{{ c.shadow }}">{{ c.name }}</button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Order grid" style="max-width:1200px;margin:0 auto;padding:32px 20px 80px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:18px">
+    <h2 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:28px;letter-spacing:.04em;color:#fff">{{ orderActiveName }}</h2>
+    <div style="display:flex;gap:14px;font-size:12px;letter-spacing:.08em;color:#8a8a94"><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#39ff5c;box-shadow:0 0 8px #39ff5c"></span>DELIVERY</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#55565f"></span>IN-STORE ONLY</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px">
+    <sc-for list="{{ orderItems }}" as="p" hint-placeholder-count="8">
+      <div style="display:flex;flex-direction:column;background:#14151a;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.06);position:relative;opacity:{{ p.opacity }}">
+        <div style="aspect-ratio:1/1;background:radial-gradient(circle at 50% 42%,rgba(227,179,65,.18),transparent 58%),repeating-linear-gradient(135deg,#1b1c21 0 10px,#171820 10px 20px);display:flex;align-items:center;justify-content:center"><svg sc-camel-view-box="0 0 32 24" width="52" height="39" aria-hidden="true" style="filter:drop-shadow(0 0 8px rgba(227,179,65,.55))"><path d="M2 20 L2 7 L9 13 L16 2 L23 13 L30 7 L30 20 Z" fill="#e3b341"></path></svg></div>
+        <div style="position:absolute;top:10px;left:10px;padding:4px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.1em;background:{{ p.tagBg }};color:{{ p.tagColor }};border:1px solid {{ p.tagBorder }}">{{ p.tag }}</div>
+        <div style="padding:14px 14px 16px;display:flex;flex-direction:column;gap:4px;flex:1">
+          <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8a8a94">{{ p.catName }}</div>
+          <div style="font-size:15px;font-weight:600;line-height:1.3;color:#f2f2f4;flex:1">{{ p.name }}</div>
+          <div style="font-size:15px;font-weight:600;color:#c9c9d1;margin:6px 0 10px">{{ p.priceText }}</div>
+          <sc-if value="{{ p.delivery }}" hint-placeholder-val="{{ true }}">
+            <button sc-camel-on-click="{{ p.add }}" style="min-height:44px;border:0;border-radius:10px;background:#39ff5c;color:#06140a;font:700 14px Outfit,sans-serif;cursor:pointer;box-shadow:0 0 14px rgba(57,255,92,.35)" style-hover="background:#6dff86">Add to Cart</button>
+          </sc-if>
+          <sc-if value="{{ p.storeOnly }}" hint-placeholder-val="{{ false }}">
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=6845+GA-92+Suite+120+Woodstock+GA+30189" target="_blank" rel="noopener" style="min-height:44px;display:flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid rgba(255,255,255,.18);color:#c9c9d1;font-size:14px;font-weight:600;text-decoration:none" style-hover="border-color:#fff;color:#fff">Get directions</a>
+          </sc-if>
+        </div>
+        <div style="height:3px;background:{{ p.accent }};box-shadow:0 0 12px {{ p.accent }},0 0 24px {{ p.accent }}"></div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+</div>
+</sc-if>
+
+<sc-if value="{{ checkingOut }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="Checkout" style="max-width:1200px;margin:0 auto;padding:48px 20px 80px">
+  <button sc-camel-on-click="{{ backToBrowse }}" style="min-height:44px;padding:0;border:0;background:none;color:#39ff5c;font:600 14px Outfit,sans-serif;cursor:pointer" style-hover="color:#fff">← Back to products</button>
+  <h1 style="margin:10px 0 28px;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(40px,7vw,72px);line-height:.95;letter-spacing:.02em;color:#fff">CHECKOUT</h1>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="background:#14151a;border-radius:16px;padding:22px;border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(57,255,92,.15);color:#eaffe9;border:1px solid rgba(57,255,92,.6);font-size:13px;font-weight:700">1</span><h2 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:20px;letter-spacing:.06em;color:#fff">CONTACT</h2></div>
+        <input placeholder="Full name" value="{{ contactName }}" sc-camel-on-change="{{ setContactName }}" autocomplete="name" style="min-height:48px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0d0d10;color:#fff;font-size:15px;outline:none" style-focus="border-color:#39ff5c">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
+          <input placeholder="Phone" type="tel" value="{{ phone }}" sc-camel-on-change="{{ setPhone }}" autocomplete="tel" style="min-height:48px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0d0d10;color:#fff;font-size:15px;outline:none" style-focus="border-color:#39ff5c">
+          <input placeholder="Email" type="email" value="{{ email }}" sc-camel-on-change="{{ setEmail }}" autocomplete="email" style="min-height:48px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0d0d10;color:#fff;font-size:15px;outline:none" style-focus="border-color:#39ff5c">
+        </div>
+      </div>
+      <div style="background:#14151a;border-radius:16px;padding:22px;border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(57,255,92,.15);color:#eaffe9;border:1px solid rgba(57,255,92,.6);font-size:13px;font-weight:700">2</span><h2 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:20px;letter-spacing:.06em;color:#fff">DELIVERY ADDRESS</h2></div>
+        <input placeholder="Street address" value="{{ street }}" sc-camel-on-change="{{ setStreet }}" autocomplete="street-address" style="min-height:48px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0d0d10;color:#fff;font-size:15px;outline:none" style-focus="border-color:#39ff5c">
+        <input placeholder="Apt / suite (optional)" value="{{ apt }}" sc-camel-on-change="{{ setApt }}" autocomplete="address-line2" style="min-height:48px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0d0d10;color:#fff;font-size:15px;outline:none" style-focus="border-color:#39ff5c">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px">
+          <input placeholder="City" value="{{ city }}" sc-camel-on-change="{{ setCity }}" autocomplete="address-level2" style="min-height:48px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0d0d10;color:#fff;font-size:15px;outline:none;min-width:0" style-focus="border-color:#39ff5c">
+          <input placeholder="State" value="{{ region }}" sc-camel-on-change="{{ setRegion }}" autocomplete="address-level1" style="min-height:48px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0d0d10;color:#fff;font-size:15px;outline:none;min-width:0" style-focus="border-color:#39ff5c">
+          <input placeholder="ZIP" value="{{ zip }}" sc-camel-on-change="{{ setZip }}" autocomplete="postal-code" inputmode="numeric" style="min-height:48px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0d0d10;color:#fff;font-size:15px;outline:none;min-width:0" style-focus="border-color:#39ff5c">
+        </div>
+      </div>
+      <div style="background:#14151a;border-radius:16px;padding:22px;border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(57,255,92,.15);color:#eaffe9;border:1px solid rgba(57,255,92,.6);font-size:13px;font-weight:700">3</span><h2 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:20px;letter-spacing:.06em;color:#fff">PAYMENT</h2></div>
+          <span style="padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#eaffe9;border:1px solid rgba(57,255,92,.6);background:rgba(57,255,92,.08)">PAY ON CONFIRMATION</span>
+        </div>
+        <p style="margin:0;font-size:14px;color:#b3b3bb;line-height:1.5">Card numbers are not collected on this site. Email the order, then the shop calls to confirm it and take payment.</p>
+      </div>
+      <div style="background:#14151a;border-radius:16px;padding:22px;border:1px solid rgba(255,62,200,.4);box-shadow:0 0 20px rgba(255,62,200,.15);display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,62,200,.15);color:#ffd6f2;border:1px solid rgba(255,62,200,.6);font-size:13px;font-weight:700">4</span><h2 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:20px;letter-spacing:.06em;color:#fff">AGE VERIFICATION</h2></div>
+        <p style="margin:0;font-size:14px;color:#b3b3bb;line-height:1.5">Georgia law requires a valid ID for tobacco, nicotine, and hemp products. Have it ready — the shop checks it at delivery and at the counter. Do not email a photo of your ID.</p>
+        <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;min-height:44px;font-size:15px;color:#f2f2f4;line-height:1.4">
+          <input type="checkbox" sc-camel-on-change="{{ toggleAge }}" checked="{{ ageConfirmed }}" style="width:22px;height:22px;margin:0;flex:none;accent-color:#ff3ec8">
+          <span>I confirm I am 21 years of age or older.</span>
+        </label>
+      </div>
+    </div>
+    <div style="background:#0d0d10;border-radius:16px;padding:22px;border:1px solid rgba(57,255,92,.4);box-shadow:0 0 22px rgba(57,255,92,.15);display:flex;flex-direction:column;gap:14px;position:sticky;top:84px">
+      <h2 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:20px;letter-spacing:.06em;color:#fff">ORDER SUMMARY</h2>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ cartItems }}" as="c" hint-placeholder-count="2">
+          <div style="display:flex;justify-content:space-between;gap:12px;font-size:14px;color:#c9c9d1"><span>{{ c.qty }} × {{ c.name }}</span><span style="flex:none">{{ c.lineText }}</span></div>
+        </sc-for>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:12px;display:flex;flex-direction:column;gap:6px;font-size:14px;color:#b3b3bb">
+        <div style="display:flex;justify-content:space-between"><span>Subtotal</span><span>{{ subtotalText }}</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Delivery</span><span>{{ deliveryFeeText }}</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Tax</span><span style="color:#8a8a94">Calculated at checkout</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:18px;font-weight:700;color:#fff;margin-top:6px"><span>Total</span><span>{{ totalText }}</span></div>
+      </div>
+      <button sc-camel-on-click="{{ placeOrder }}" disabled="{{ placeDisabled }}" style="min-height:54px;border:0;border-radius:12px;background:#39ff5c;color:#06140a;font:700 16px Outfit,sans-serif;cursor:pointer;box-shadow:0 0 18px rgba(57,255,92,.45);opacity:{{ placeOpacity }}">Email this order</button>
+      <p style="margin:0;font-size:12px;color:#8a8a94;line-height:1.5;text-align:center">{{ placeHint }}</p>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="Coming soon" style="max-width:640px;margin:0 auto;padding:96px 20px 120px;text-align:center">
+  <svg sc-camel-view-box="0 0 32 24" width="64" height="48" style="display:block;margin:0 auto 14px;filter:drop-shadow(0 0 12px rgba(227,179,65,.7))"><path d="M2 20 L2 7 L9 13 L16 2 L23 13 L30 7 L30 20 Z" fill="#e3b341"></path></svg>
+  <div style="font-family:Pacifico,cursive;font-size:26px;color:#ffe9f8;text-shadow:0 0 8px #ff3ec8,0 0 22px rgba(255,62,200,.6)">Send it over</div>
+  <h1 style="margin:8px 0 16px;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(40px,8vw,72px);line-height:.95;letter-spacing:.02em;color:#eefff0;text-shadow:0 0 6px #39ff5c,0 0 22px rgba(57,255,92,.8)">YOUR EMAIL APP<br>SHOULD BE OPEN</h1>
+  <p style="margin:0 auto 22px;max-width:480px;font-size:16px;line-height:1.6;color:#b3b3bb;text-wrap:pretty">Send that email so the shop gets the request. Nothing is charged until someone calls to confirm. If the email did not open, call and read the order below.</p>
+  <div style="margin:0 auto 28px;max-width:480px;text-align:left;padding:16px 18px;border-radius:14px;background:#14151a;border:1px solid rgba(255,255,255,.08)">
+    <sc-for list="{{ orderLines }}" as="line" hint-placeholder-count="0">
+      <div style="font-size:14px;color:#c9c9d1;line-height:1.55">{{ line }}</div>
+    </sc-for>
+  </div>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="tel:+16786538893" style="min-height:52px;padding:0 26px;display:inline-flex;align-items:center;border-radius:12px;background:#39ff5c;color:#06140a;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 0 18px rgba(57,255,92,.45)">Call (678) 653-8893</a>
+    <button sc-camel-on-click="{{ backToBrowse }}" style="min-height:52px;padding:0 26px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:transparent;color:#e8e8ea;font:600 15px Outfit,sans-serif;cursor:pointer">Keep browsing</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+<div>
+<div sc-camel-on-click="{{ closeCart }}" style="position:fixed;inset:0;z-index:80;background:rgba(6,6,8,.6);backdrop-filter:blur(4px)"></div>
+<aside data-screen-label="Cart drawer" style="position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(420px,100%);background:#0f1013;border-left:1px solid rgba(57,255,92,.4);box-shadow:-10px 0 40px rgba(0,0,0,.6),inset 3px 0 0 #39ff5c;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.08)">
+    <h2 style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:24px;letter-spacing:.06em;color:#fff">YOUR CART</h2>
+    <button sc-camel-on-click="{{ closeCart }}" aria-label="Close cart" style="width:44px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:transparent;color:#fff;font-size:20px;cursor:pointer">×</button>
+  </div>
+  <div style="flex:1;overflow:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px">
+    <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+      <div style="padding:40px 12px;text-align:center;color:#8a8a94;font-size:15px;line-height:1.5">Nothing in here yet.<br>Add something marked <span style="color:#eaffe9;font-weight:600">Delivery</span>.</div>
+    </sc-if>
+    <sc-for list="{{ cartItems }}" as="c" hint-placeholder-count="0">
+      <div style="display:flex;gap:12px;align-items:center;background:#14151a;border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,.06)">
+        <div style="width:56px;height:56px;flex:none;border-radius:8px;background:repeating-linear-gradient(135deg,#1b1c21 0 6px,#171820 6px 12px);border-bottom:2px solid {{ c.accent }}"></div>
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+          <div style="font-size:14px;font-weight:600;color:#f2f2f4;line-height:1.3">{{ c.name }}</div>
+          <div style="font-size:13px;color:#8a8a94">{{ c.priceText }}</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:4px;flex:none">
+          <button sc-camel-on-click="{{ c.dec }}" aria-label="Decrease" style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.14);background:transparent;color:#fff;font-size:18px;cursor:pointer">−</button>
+          <span style="min-width:24px;text-align:center;font-weight:600;color:#fff">{{ c.qty }}</span>
+          <button sc-camel-on-click="{{ c.inc }}" aria-label="Increase" style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(57,255,92,.5);background:rgba(57,255,92,.08);color:#eaffe9;font-size:18px;cursor:pointer">+</button>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="padding:18px 20px 24px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;justify-content:space-between;font-size:16px;color:#c9c9d1"><span>Subtotal</span><span style="font-weight:700;color:#fff">{{ subtotalText }}</span></div>
+    <button sc-camel-on-click="{{ goCheckout }}" disabled="{{ cartEmpty }}" style="min-height:54px;border:0;border-radius:12px;background:#39ff5c;color:#06140a;font:700 16px Outfit,sans-serif;cursor:pointer;box-shadow:0 0 18px rgba(57,255,92,.45);opacity:{{ checkoutOpacity }}">Checkout</button>
+    <p style="margin:0;font-size:12px;color:#8a8a94;text-align:center">The shop confirms by phone. No payment is taken on this site.</p>
+  </div>
+</aside>
+</div>
+</sc-if>
+
+<footer style="border-top:1px solid rgba(255,255,255,.06);padding:36px 20px 44px;background:#08080a">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <svg sc-camel-view-box="0 0 32 24" width="24" height="18"><path d="M2 20 L2 7 L9 13 L16 2 L23 13 L30 7 L30 20 Z" fill="#e3b341"></path></svg>
+      <span style="font-family:Anton,Impact,sans-serif;font-size:16px;letter-spacing:.08em;color:#e8e8ea">BLACK CHARCOAL SMOKE &amp; VAPE</span>
+    </div>
+    <p style="margin:0;padding:12px 14px;border:1px solid rgba(255,255,255,.14);border-radius:8px;font-size:13px;line-height:1.5;color:#c2c2ca;max-width:720px"><strong style="color:#fff">WARNING:</strong> This product contains nicotine. Nicotine is an addictive chemical. Must be 21 or older to purchase.</p>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:#7a7a84">
+      <span>© 2026 Black Charcoal Smoke and Vape · 6845 GA-92, Suite 120, Woodstock, GA 30189 · (678) 653-8893</span>
+      <span style="display:flex;gap:16px"><a href="#shop" sc-camel-on-click="{{ goShop }}" style="color:#9a9aa3;text-decoration:none">Shop</a><a href="#order" sc-camel-on-click="{{ goOrder }}" style="color:#9a9aa3;text-decoration:none">Order Online</a></span>
+    </div>
   </div>
 </footer>
 
-<script>
-const HOURS = [
-  { d: "Sunday", open: 10, close: 22, text: "10am – 10pm" },
-  { d: "Monday", open: 10, close: 22, text: "10am – 10pm" },
-  { d: "Tuesday", open: 10, close: 22, text: "10am – 10pm" },
-  { d: "Wednesday", open: 10, close: 22, text: "10am – 10pm" },
-  { d: "Thursday", open: 10, close: 22, text: "10am – 10pm" },
-  { d: "Friday", open: 10, close: 23, text: "10am – 11pm" },
-  { d: "Saturday", open: 10, close: 23, text: "10am – 11pm" }
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;skipGate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Preview&quot;},&quot;staticHero&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;smokeIntensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.3,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+const NEON = { green: '#39ff5c', magenta: '#ff3ec8', blue: '#4d8dff', gold: '#e3b341' };
+const CATEGORIES = [
+  { id: 'vapes', name: 'Disposable Vapes', accent: NEON.magenta },
+  { id: 'eliquid', name: 'E-Liquids', accent: NEON.blue },
+  { id: 'shisha', name: 'Shisha / Tobacco', accent: NEON.green },
+  { id: 'cbdshisha', name: 'CBD Shisha', accent: NEON.green },
+  { id: 'delta8', name: 'Delta 8 THC', accent: NEON.magenta },
+  { id: 'kratom', name: 'Kratom', accent: NEON.blue },
+  { id: 'cbd', name: 'CBD', accent: NEON.green },
+  { id: 'glass', name: 'Glass Pipes', accent: NEON.blue },
+  { id: 'hookahs', name: 'Hookahs', accent: NEON.gold },
+  { id: 'papers', name: 'Papers & Accessories', accent: NEON.green },
 ];
-let catalog = { categories: [], products: [] };
-let filter = "all";
-
-function money(n) { return "$" + Number(n).toFixed(2); }
-function catName(id) {
-  const c = catalog.categories.find(x => x.id === id);
-  return c ? c.name : "";
-}
-function card(p) {
-  const photo = p.image
-    ? '<img src="' + p.image + '" alt="">'
-    : '<img class="fallback" src="images/mark.png" alt="">';
-  const flag = p.available
-    ? '<span class="flag on">AVAILABLE</span>'
-    : '<span class="flag off">UNAVAILABLE</span>';
-  return '<article class="card' + (p.available ? "" : " sold") + '"><div class="photo">' + flag + photo + '</div><div class="body"><div class="cat">' + catName(p.category) + '</div><div class="name">' + escapeHtml(p.name) + '</div><div class="price">' + money(p.price) + '</div></div></article>';
-}
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-}
-function render() {
-  const shown = catalog.products.filter(p => p.visible);
-  const featured = shown.filter(p => p.featured);
-  document.getElementById("featured").innerHTML = featured.length ? featured.map(card).join("") : '<p class="empty">Nothing is featured right now.</p>';
-  const items = shown.filter(p => filter === "all" || p.category === filter);
-  document.getElementById("shopGrid").innerHTML = items.length ? items.map(card).join("") : '<p class="empty">Nothing in this category right now.</p>';
-  const active = filter === "all" ? "ALL PRODUCTS" : catName(filter).toUpperCase();
-  document.getElementById("shopTitle").textContent = active;
-  document.getElementById("shopCount").textContent = items.length + (items.length === 1 ? " item" : " items");
-  const chips = [{ id: "all", name: "All" }].concat(catalog.categories);
-  document.getElementById("chips").innerHTML = chips.map(c =>
-    '<button class="' + (filter === c.id ? "on" : "") + '" data-cat="' + c.id + '">' + escapeHtml(c.name) + "</button>"
-  ).join("");
+const PRODUCTS = [
+  { id: 'dv5k', cat: 'vapes', name: 'Disposable Vape · 5,000 puff', price: 19.99, delivery: true, featured: true },
+  { id: 'dv15k', cat: 'vapes', name: 'Disposable Vape · 15,000 puff', price: 24.99, delivery: true },
+  { id: 'dv0', cat: 'vapes', name: 'Zero-Nic Disposable', price: 17.99, delivery: true },
+  { id: 'el60', cat: 'eliquid', name: 'Freebase E-Liquid · 60ml', price: 17.99, delivery: true },
+  { id: 'ns30', cat: 'eliquid', name: 'Nic Salt · 30ml', price: 15.99, delivery: true },
+  { id: 'af250', cat: 'shisha', name: 'Al Fakher · 250g', price: 21.99, delivery: true, featured: true },
+  { id: 'fu100', cat: 'shisha', name: 'Fumari · 100g', price: 12.99, delivery: true },
+  { id: 'mz250', cat: 'shisha', name: 'Mazaya · 250g', price: 18.99, delivery: true },
+  { id: 'cbs50', cat: 'cbdshisha', name: 'CBD Shisha · 50g', price: 14.99, delivery: false },
+  { id: 'd8g', cat: 'delta8', name: 'The Hemp Doctor · Delta 8 Gummies', price: 29.99, delivery: false, featured: true },
+  { id: 'd8c', cat: 'delta8', name: 'Delta 8 Cartridge · 1g', price: 34.99, delivery: false },
+  { id: 'krc', cat: 'kratom', name: 'Kratom Capsules · 60ct', price: 24.99, delivery: false },
+  { id: 'krp', cat: 'kratom', name: 'Kratom Powder · 100g', price: 19.99, delivery: false },
+  { id: 'cbt', cat: 'cbd', name: 'CBD Tincture · 1000mg', price: 39.99, delivery: true, featured: true },
+  { id: 'cbg', cat: 'cbd', name: 'CBD Gummies · 30ct', price: 27.99, delivery: true },
+  { id: 'ghp', cat: 'glass', name: 'Glass Hand Pipe', price: 14.99, delivery: false },
+  { id: 'gwp', cat: 'glass', name: 'Glass Water Pipe · 12in', price: 59.99, delivery: false },
+  { id: 'hk22', cat: 'hookahs', name: 'Modern Hookah · 22in', price: 89.99, delivery: false, featured: true },
+  { id: 'hkh', cat: 'hookahs', name: 'Silicone Hookah Hose', price: 16.99, delivery: true },
+  { id: 'hkc', cat: 'hookahs', name: 'Natural Coconut Coals · 1kg', price: 11.99, delivery: true },
+  { id: 'hkb', cat: 'hookahs', name: 'Clay Phunnel Bowl', price: 12.99, delivery: true },
+  { id: 'rawk', cat: 'papers', name: 'RAW Classic · King Size', price: 3.49, delivery: true, featured: true },
+  { id: 'rawc', cat: 'papers', name: 'RAW Cones · 6-pack', price: 5.99, delivery: true },
+  { id: 'lgt', cat: 'papers', name: 'Torch Lighter', price: 9.99, delivery: true },
+];
+const HOURS = [
+  { d: 'Sunday', open: 10, close: 22, text: '10am – 10pm' },
+  { d: 'Monday', open: 10, close: 22, text: '10am – 10pm' },
+  { d: 'Tuesday', open: 10, close: 22, text: '10am – 10pm' },
+  { d: 'Wednesday', open: 10, close: 22, text: '10am – 10pm' },
+  { d: 'Thursday', open: 10, close: 22, text: '10am – 10pm' },
+  { d: 'Friday', open: 10, close: 23, text: '10am – 11pm' },
+  { d: 'Saturday', open: 10, close: 23, text: '10am – 11pm' },
+];
+const PAGE_HASH = { home: '#home', shop: '#shop', order: '#order' };
+function readAge() {
+  try { return localStorage.getItem('bcs-age-ok') === '1'; } catch (e) { return false; }
 }
 function storeClock() {
-  const parts = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", weekday: "short", hour: "numeric", minute: "numeric", hour12: false }).formatToParts(new Date());
-  const get = t => (parts.find(p => p.type === t) || {}).value || "";
-  const days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
-  let hour = Number(get("hour"));
-  if (hour === 24) hour = 0;
-  return { day: days[get("weekday")], hr: hour + Number(get("minute")) / 60 };
-}
-function renderHours() {
-  const clock = storeClock();
-  const today = HOURS[clock.day];
-  const open = today && clock.hr >= today.open && clock.hr < today.close;
-  const badge = document.getElementById("openBadge");
-  badge.textContent = open ? "OPEN NOW" : "CLOSED · OPENS 10AM";
-  badge.className = "badge " + (open ? "open" : "closed");
-  document.getElementById("hours").innerHTML = HOURS.map((h, i) =>
-    '<div style="color:' + (i === clock.day ? "#eaffe9" : "#b3b3bb") + ";font-weight:" + (i === clock.day ? 700 : 400) + '"><span>' + h.d + "</span><span>" + h.text + "</span></div>"
-  ).join("");
-}
-function showPage() {
-  const hash = (location.hash || "#home").replace("#", "");
-  const shop = hash === "shop";
-  document.getElementById("home").classList.toggle("on", !shop);
-  document.getElementById("shop").classList.toggle("on", shop);
-  if (hash === "location" || hash === "contact") {
-    document.getElementById("home").classList.add("on");
-    const el = document.getElementById(hash);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  } else window.scrollTo(0, 0);
-}
-function smoke() {
-  const c = document.getElementById("smoke");
-  if (!c) return;
-  const ctx = c.getContext("2d");
-  const parts = [];
-  const colors = ["57,255,92", "255,62,200"];
-  function resize() {
-    c.width = c.clientWidth; c.height = c.clientHeight;
+  try {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false,
+    }).formatToParts(new Date());
+    const get = (t) => (parts.find((p) => p.type === t) || {}).value || '';
+    const days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+    let hour = Number(get('hour'));
+    if (hour === 24) hour = 0;
+    const day = days[get('weekday')];
+    const hr = hour + Number(get('minute')) / 60;
+    if (day === undefined || Number.isNaN(hr)) throw new Error('clock');
+    return { day, hr };
+  } catch (e) {
+    const d = new Date();
+    return { day: d.getDay(), hr: d.getHours() + d.getMinutes() / 60 };
   }
-  resize();
-  addEventListener("resize", resize);
-  function frame() {
-    ctx.clearRect(0, 0, c.width, c.height);
-    if (parts.length < 40 && Math.random() < 0.5) {
-      const side = Math.random() < 0.5;
-      parts.push({ x: side ? c.width * 0.7 : c.width * 0.25, y: c.height + 20, r: 40 + Math.random() * 70, life: 0, max: 500, vy: -0.4, c: colors[side ? 1 : 0], a: 0.12 });
-    }
-    for (let i = parts.length - 1; i >= 0; i--) {
-      const p = parts[i]; p.life++; p.y += p.vy; p.r += 0.1;
-      if (p.life > p.max) { parts.splice(i, 1); continue; }
-      const t = p.life / p.max;
-      const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
-      g.addColorStop(0, "rgba(" + p.c + "," + (p.a * Math.sin(Math.PI * t)) + ")");
-      g.addColorStop(1, "rgba(" + p.c + ",0)");
-      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.28); ctx.fill();
-    }
-    requestAnimationFrame(frame);
-  }
-  frame();
 }
-document.getElementById("chips").addEventListener("click", e => {
-  const btn = e.target.closest("button");
-  if (!btn) return;
-  filter = btn.dataset.cat;
-  render();
-});
-addEventListener("hashchange", showPage);
-document.getElementById("yes").onclick = () => {
-  localStorage.setItem("bcs-age-ok", "1");
-  document.getElementById("gate").classList.add("hidden");
-  document.body.style.overflow = "";
-};
-document.getElementById("no").onclick = () => document.getElementById("denied").classList.remove("hidden");
-if (localStorage.getItem("bcs-age-ok") === "1") {
-  document.getElementById("gate").classList.add("hidden");
-} else document.body.style.overflow = "hidden";
 
-fetch("data/catalog.json").then(r => r.json()).then(data => {
-  catalog = data;
-  render();
-  renderHours();
-  showPage();
-  smoke();
-}).catch(() => {
-  document.getElementById("featured").innerHTML = '<p class="empty">The shop list could not be loaded.</p>';
-});
+class Component extends DCLogic {
+  state = {
+    page: 'home', ageOk: readAge(), denied: false,
+    shopFilter: 'all', orderFilter: 'all',
+    mode: 'browse', cartOpen: false, ageConfirmed: false, cart: {},
+    now: Date.now(), pendingAnchor: null, orderLines: [],
+    contactName: '', phone: '', email: '', street: '', apt: '', city: 'Woodstock', region: 'GA', zip: '',
+  };
+  canvasRef = React.createRef();
+
+  componentDidMount() {
+    this._t = setInterval(() => this.setState({ now: Date.now() }), 60000);
+    this._onHash = () => this.applyHash();
+    window.addEventListener('hashchange', this._onHash);
+    this.applyHash();
+    this.afterRender();
+  }
+  componentDidUpdate() { this.afterRender(); }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf); clearInterval(this._t);
+    if (this._ro) this._ro.disconnect();
+    window.removeEventListener('hashchange', this._onHash);
+    document.body.style.overflow = '';
+  }
+
+  applyHash() {
+    const h = (location.hash || '').replace('#', '');
+    if (h === 'shop') this.setState({ page: 'shop', pendingAnchor: null });
+    else if (h === 'order') this.setState({ page: 'order', mode: 'browse', pendingAnchor: null });
+    else if (h === 'home' || h === '') this.setState({ page: 'home', pendingAnchor: null });
+    else this.setState({ page: 'home', pendingAnchor: h });
+  }
+  nav(page, anchor) {
+    return (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      const hash = anchor ? '#' + anchor : PAGE_HASH[page];
+      try { history.replaceState(null, '', hash); } catch (err) {}
+      this.setState({ page, mode: page === 'order' ? 'browse' : this.state.mode, pendingAnchor: anchor || null, cartOpen: false });
+      if (!anchor) window.scrollTo(0, 0);
+    };
+  }
+  afterRender() {
+    document.body.style.overflow = (this.showGate() || this.state.cartOpen) ? 'hidden' : '';
+    const a = this.state.pendingAnchor;
+    if (a && this.state.page === 'home' && !this.showGate()) {
+      const el = document.getElementById(a);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.pageYOffset - 70;
+        window.scrollTo({ top, behavior: 'smooth' });
+        this.setState({ pendingAnchor: null });
+      }
+    }
+    if (this.state.page === 'home' && !this.showGate()) this.startSmoke();
+    else if (this._smokeOn) { cancelAnimationFrame(this._raf); if (this._ro) this._ro.disconnect(); this._smokeOn = false; }
+  }
+  showGate() { return this.props.skipGate ? false : !this.state.ageOk; }
+
+  startSmoke() {
+    const c = this.canvasRef.current;
+    if (!c || this._smokeOn) return;
+    this._smokeOn = true;
+    const ctx = c.getContext('2d');
+    const reduce = (this.props.staticHero ?? false) || matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const intensity = this.props.smokeIntensity ?? 1;
+    const colors = ['57,255,92', '255,62,200'];
+    let w = 0, h = 0, dpr = 1; const parts = [];
+    const resize = () => { dpr = Math.min(devicePixelRatio || 1, 1.5); w = c.clientWidth; h = c.clientHeight; c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.globalCompositeOperation = 'lighter'; };
+    resize();
+    this._ro = new ResizeObserver(resize); this._ro.observe(c);
+    const spawn = (scatter) => {
+      const side = Math.random() < .5 ? 0 : 1;
+      const x = side ? w * (.5 + Math.random() * .42) : w * (.08 + Math.random() * .42);
+      parts.push({ x, y: scatter ? Math.random() * h : h + 60, r: 50 + Math.random() * 90, life: 0, max: 700 + Math.random() * 500, vx: (Math.random() - .5) * .35, vy: -(.35 + Math.random() * .55), ph: Math.random() * 6.28, c: colors[side], a: .09 + Math.random() * .1 });
+    };
+    const draw = (p) => {
+      const t = p.life / p.max; const alpha = p.a * Math.sin(Math.PI * Math.min(1, Math.max(0, t)));
+      const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+      g.addColorStop(0, 'rgba(' + p.c + ',' + alpha + ')'); g.addColorStop(1, 'rgba(' + p.c + ',0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fill();
+    };
+    if (reduce) {
+      for (let i = 0; i < 36; i++) { spawn(true); parts[i].life = parts[i].max * (.3 + Math.random() * .4); }
+      ctx.clearRect(0, 0, w, h); parts.forEach(draw); return;
+    }
+    const N = Math.round(55 * intensity);
+    const step = () => {
+      if (!this.canvasRef.current) { this._smokeOn = false; return; }
+      ctx.clearRect(0, 0, w, h);
+      if (parts.length < N && Math.random() < .6) spawn(false);
+      for (let i = parts.length - 1; i >= 0; i--) {
+        const p = parts[i]; p.life++;
+        p.x += p.vx + Math.sin(p.life * .012 + p.ph) * .6; p.y += p.vy; p.r += .12;
+        if (p.life >= p.max || p.y < -p.r) { parts.splice(i, 1); continue; }
+        draw(p);
+      }
+      this._raf = requestAnimationFrame(step);
+    };
+    step();
+  }
+
+  setQty(id, d) { this.setState(s => { const cart = { ...s.cart }; const q = (cart[id] || 0) + d; if (q <= 0) delete cart[id]; else cart[id] = q; return { cart }; }); }
+
+  chip(which, id, name) {
+    const cur = which === 'shop' ? this.state.shopFilter : this.state.orderFilter;
+    const on = cur === id;
+    return { id, name, select: () => this.setState(which === 'shop' ? { shopFilter: id } : { orderFilter: id }),
+      bg: on ? 'rgba(57,255,92,.14)' : 'transparent', color: on ? '#eaffe9' : '#c9c9d1',
+      border: on ? 'rgba(57,255,92,.8)' : 'rgba(255,255,255,.16)', shadow: on ? '0 0 14px rgba(57,255,92,.4)' : 'none' };
+  }
+
+  renderVals() {
+    const byId = Object.fromEntries(CATEGORIES.map(c => [c.id, c]));
+    const prodById = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+    const { page, mode, cart } = this.state;
+
+    const shopItems = PRODUCTS.filter(p => this.state.shopFilter === 'all' || p.cat === this.state.shopFilter).map(p => {
+      const c = byId[p.cat] || {};
+      return { ...p, catName: c.name, accent: c.accent, priceText: '$' + p.price.toFixed(2),
+        tag: p.delivery ? 'DELIVERY' : 'IN-STORE', tagBg: p.delivery ? 'rgba(57,255,92,.15)' : 'rgba(10,10,12,.7)',
+        tagColor: p.delivery ? '#eaffe9' : '#b3b3bb', tagBorder: p.delivery ? 'rgba(57,255,92,.6)' : 'rgba(255,255,255,.18)' };
+    });
+    const orderItems = PRODUCTS.filter(p => this.state.orderFilter === 'all' || p.cat === this.state.orderFilter).map(p => {
+      const c = byId[p.cat] || {};
+      return { ...p, catName: c.name, accent: p.delivery ? c.accent : '#3a3b42', priceText: '$' + p.price.toFixed(2),
+        storeOnly: !p.delivery, opacity: p.delivery ? 1 : .72,
+        add: () => this.setState(s => ({ cart: { ...s.cart, [p.id]: (s.cart[p.id] || 0) + 1 }, cartOpen: true })),
+        tag: p.delivery ? 'DELIVERY' : 'IN-STORE ONLY', tagBg: p.delivery ? 'rgba(57,255,92,.15)' : 'rgba(10,10,12,.75)',
+        tagColor: p.delivery ? '#eaffe9' : '#b3b3bb', tagBorder: p.delivery ? 'rgba(57,255,92,.6)' : 'rgba(255,255,255,.18)' };
+    });
+    const cartItems = Object.entries(cart).filter(([id]) => prodById[id]).map(([id, qty]) => {
+      const p = prodById[id]; const c = byId[p.cat] || {};
+      return { ...p, qty, accent: c.accent, priceText: '$' + p.price.toFixed(2), lineText: '$' + (p.price * qty).toFixed(2),
+        inc: () => this.setQty(id, 1), dec: () => this.setQty(id, -1) };
+    });
+    const subtotal = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+    const fee = cartItems.length ? 4.99 : 0;
+    const nameOk = this.state.contactName.trim().length > 0;
+    const phoneOk = this.state.phone.replace(/\D/g, '').length >= 10;
+    const addressOk = this.state.street.trim() && this.state.city.trim() && this.state.zip.trim().length >= 5;
+    const canPlace = this.state.ageConfirmed && cartItems.length > 0 && nameOk && phoneOk && addressOk;
+    const placeHint = !cartItems.length
+      ? 'Add a delivery item before checkout.'
+      : !nameOk || !phoneOk || !addressOk
+        ? 'Add your name, a 10-digit phone number, and a delivery address.'
+        : !this.state.ageConfirmed
+          ? 'Confirm you are 21+ to continue.'
+          : 'This emails the shop. We call to confirm before anything is charged.';
+
+    const clock = storeClock();
+    const today = HOURS[clock.day];
+    const openNow = !!today && clock.hr >= today.open && clock.hr < today.close;
+
+    return {
+      showGate: this.showGate(), denied: this.state.denied,
+      confirmAge: () => {
+        try { localStorage.setItem('bcs-age-ok', '1'); } catch (e) {}
+        this.setState({ ageOk: true, denied: false });
+      },
+      denyAge: () => this.setState({ denied: true }),
+      onHome: page === 'home', onShop: page === 'shop', onOrder: page === 'order',
+      goHome: this.nav('home'), goShop: this.nav('shop'), goOrder: this.nav('order'),
+      goHours: this.nav('home', 'location'), goContact: this.nav('home', 'contact'),
+      canvasRef: this.canvasRef,
+      featured: PRODUCTS.filter(p => p.featured).map(p => ({ ...p, catName: byId[p.cat].name, accent: byId[p.cat].accent, priceText: '$' + p.price.toFixed(2) })),
+      hours: HOURS.map((h, i) => ({ ...h, color: i === clock.day ? '#eaffe9' : '#b3b3bb', weight: i === clock.day ? 700 : 400 })),
+      openNow, closedNow: !!today && !openNow,
+      shopChips: [this.chip('shop', 'all', 'All'), ...CATEGORIES.map(c => this.chip('shop', c.id, c.name))],
+      shopItems, shopActiveName: this.state.shopFilter === 'all' ? 'ALL PRODUCTS' : (byId[this.state.shopFilter] || {}).name?.toUpperCase(),
+      shopCountText: shopItems.length + (shopItems.length === 1 ? ' item' : ' items'),
+      orderChips: [this.chip('order', 'all', 'All'), ...CATEGORIES.map(c => this.chip('order', c.id, c.name))],
+      orderItems, orderActiveName: this.state.orderFilter === 'all' ? 'ALL PRODUCTS' : (byId[this.state.orderFilter] || {}).name?.toUpperCase(),
+      orderBrowsing: page === 'order' && mode === 'browse',
+      checkingOut: page === 'order' && mode === 'checkout',
+      submitted: page === 'order' && mode === 'submitted',
+      cartOpen: this.state.cartOpen, cartEmpty: cartItems.length === 0, cartItems,
+      cartCount: cartItems.reduce((a, c) => a + c.qty, 0),
+      openCart: () => this.setState({ cartOpen: true }), closeCart: () => this.setState({ cartOpen: false }),
+      goCheckout: () => {
+        if (!cartItems.length) return;
+        window.scrollTo(0, 0);
+        this.setState({ cartOpen: false, mode: 'checkout' });
+      },
+      backToBrowse: () => {
+        window.scrollTo(0, 0);
+        this.setState({ mode: 'browse' });
+      },
+      subtotalText: '$' + subtotal.toFixed(2), deliveryFeeText: cartItems.length ? '$' + fee.toFixed(2) : '—',
+      totalText: '$' + (subtotal + fee).toFixed(2), checkoutOpacity: cartItems.length ? 1 : .45,
+      ageConfirmed: this.state.ageConfirmed, toggleAge: (e) => this.setState({ ageConfirmed: e.target.checked }),
+      contactName: this.state.contactName, phone: this.state.phone, email: this.state.email,
+      street: this.state.street, apt: this.state.apt, city: this.state.city, region: this.state.region, zip: this.state.zip,
+      setContactName: (e) => this.setState({ contactName: e.target.value }),
+      setPhone: (e) => this.setState({ phone: e.target.value }),
+      setEmail: (e) => this.setState({ email: e.target.value }),
+      setStreet: (e) => this.setState({ street: e.target.value }),
+      setApt: (e) => this.setState({ apt: e.target.value }),
+      setCity: (e) => this.setState({ city: e.target.value }),
+      setRegion: (e) => this.setState({ region: e.target.value }),
+      setZip: (e) => this.setState({ zip: e.target.value }),
+      orderLines: this.state.orderLines,
+      placeDisabled: !canPlace, placeOpacity: canPlace ? 1 : .45,
+      placeHint,
+      placeOrder: () => {
+        if (!canPlace) return;
+        const s = this.state;
+        const lines = [
+          'Name: ' + s.contactName.trim(),
+          'Phone: ' + s.phone.trim(),
+          'Email: ' + (s.email.trim() || '—'),
+          'Address: ' + [s.street, s.apt, s.city, s.region, s.zip].map((v) => v.trim()).filter(Boolean).join(', '),
+          'Age confirmed 21+: yes',
+          'Items:',
+          ...cartItems.map((c) => c.qty + ' × ' + c.name + ' — ' + c.lineText),
+          'Subtotal: $' + subtotal.toFixed(2),
+          'Delivery: $' + fee.toFixed(2),
+          'Total before tax: $' + (subtotal + fee).toFixed(2),
+        ];
+        const href = 'mailto:blackcharcoal2020@gmail.com?subject=' + encodeURIComponent('Order request — ' + s.contactName.trim()) + '&body=' + encodeURIComponent(lines.join('\n'));
+        window.location.href = href;
+        window.scrollTo(0, 0);
+        this.setState({ mode: 'submitted', orderLines: lines, cartOpen: false });
+      },
+    };
+  }
+}
+
 </script>
-</body>
-</html>
+
+
+</body></html>
