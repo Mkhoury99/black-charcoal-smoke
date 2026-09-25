@@ -37,6 +37,7 @@ label.check input { width: auto; height: auto; min-height: 0; margin: 0; }
   <h1>SHOP ITEMS</h1>
   <p class="meta">Changes update the shop in this browser as soon as you save. They are not linked from the public site.</p>
   <p><button id="add">Add item</button></p>
+  <div id="addSlot"></div>
   <div id="list"></div>
   <form id="editor" class="editor">
     <h2 id="title">Edit item</h2>
@@ -95,12 +96,17 @@ function catName(id) {
   const c = catalog.categories.find(x => x.id === id);
   return c ? c.name : id;
 }
+function parkEditor() {
+  $("editor").classList.remove("on");
+  $("app").appendChild($("editor"));
+}
 function draw() {
+  parkEditor();
   $("cat").innerHTML = catalog.categories.map(c => '<option value="' + c.id + '">' + esc(c.name) + "</option>").join("");
   $("list").innerHTML = catalog.products.map(p =>
-    '<div class="item"><div><strong>' + esc(p.name) + '</strong><div class="meta">' + esc(catName(p.cat)) + " · $" + Number(p.price).toFixed(2) +
+    '<div class="block" data-id="' + p.id + '"><div class="item"><div><strong>' + esc(p.name) + '</strong><div class="meta">' + esc(catName(p.cat)) + " · $" + Number(p.price).toFixed(2) +
     (p.visible === false ? " · hidden" : "") + (p.soldOut ? " · sold out" : "") + (p.featured ? " · featured" : "") +
-    '</div></div><button class="ghost" data-id="' + p.id + '">Edit</button></div>'
+    '</div></div><button class="ghost" data-id="' + p.id + '">Edit</button></div></div>'
   ).join("");
 }
 $("list").onclick = e => {
@@ -126,8 +132,17 @@ function open(p) {
   else prev.style.display = "none";
   $("remove").style.display = p ? "" : "none";
   if (p) $("cat").value = p.cat;
+  const editor = $("editor");
+  if (p) {
+    const row = document.querySelector('.block[data-id="' + p.id + '"]');
+    row.after(editor);
+    row.scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    $("addSlot").appendChild(editor);
+    editor.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
-$("cancel").onclick = () => $("editor").classList.remove("on");
+$("cancel").onclick = () => parkEditor();
 $("editor").onsubmit = e => {
   e.preventDefault();
   const item = {
@@ -144,7 +159,6 @@ $("editor").onsubmit = e => {
   if (editing) catalog.products = catalog.products.map(p => p.id === item.id ? item : p);
   else catalog.products.push(item);
   localStorage.setItem("bcs-catalog", JSON.stringify(catalog));
-  $("editor").classList.remove("on");
   $("status").textContent = "Saved. Open the shop in this browser to see it.";
   draw();
 };
@@ -177,7 +191,6 @@ $("remove").onclick = () => {
   if (!editing || !confirm("Delete this item?")) return;
   catalog.products = catalog.products.filter(p => p.id !== editing.id);
   localStorage.setItem("bcs-catalog", JSON.stringify(catalog));
-  $("editor").classList.remove("on");
   draw();
 };
 </script>
