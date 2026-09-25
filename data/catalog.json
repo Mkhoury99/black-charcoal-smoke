@@ -1,0 +1,40 @@
+{
+  "categories": [
+    { "id": "vapes", "name": "Disposable Vapes" },
+    { "id": "eliquid", "name": "E-Liquids" },
+    { "id": "shisha", "name": "Shisha / Tobacco" },
+    { "id": "cbdshisha", "name": "CBD Shisha" },
+    { "id": "delta8", "name": "Delta 8 THC" },
+    { "id": "kratom", "name": "Kratom" },
+    { "id": "cbd", "name": "CBD" },
+    { "id": "glass", "name": "Glass Pipes" },
+    { "id": "hookahs", "name": "Hookahs" },
+    { "id": "papers", "name": "Papers & Accessories" }
+  ],
+  "products": [
+    { "id": "dv5k", "name": "Disposable Vape · 5,000 puff", "category": "vapes", "price": 19.99, "visible": true, "available": true, "featured": true, "image": "" },
+    { "id": "dv15k", "name": "Disposable Vape · 15,000 puff", "category": "vapes", "price": 24.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "dv0", "name": "Zero-Nic Disposable", "category": "vapes", "price": 17.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "el60", "name": "Freebase E-Liquid · 60ml", "category": "eliquid", "price": 17.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "ns30", "name": "Nic Salt · 30ml", "category": "eliquid", "price": 15.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "af250", "name": "Al Fakher · 250g", "category": "shisha", "price": 21.99, "visible": true, "available": true, "featured": true, "image": "" },
+    { "id": "fu100", "name": "Fumari · 100g", "category": "shisha", "price": 12.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "mz250", "name": "Mazaya · 250g", "category": "shisha", "price": 18.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "cbs50", "name": "CBD Shisha · 50g", "category": "cbdshisha", "price": 14.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "d8g", "name": "The Hemp Doctor · Delta 8 Gummies", "category": "delta8", "price": 29.99, "visible": true, "available": true, "featured": true, "image": "" },
+    { "id": "d8c", "name": "Delta 8 Cartridge · 1g", "category": "delta8", "price": 34.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "krc", "name": "Kratom Capsules · 60ct", "category": "kratom", "price": 24.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "krp", "name": "Kratom Powder · 100g", "category": "kratom", "price": 19.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "cbt", "name": "CBD Tincture · 1000mg", "category": "cbd", "price": 39.99, "visible": true, "available": true, "featured": true, "image": "" },
+    { "id": "cbg", "name": "CBD Gummies · 30ct", "category": "cbd", "price": 27.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "ghp", "name": "Glass Hand Pipe", "category": "glass", "price": 14.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "gwp", "name": "Glass Water Pipe · 12in", "category": "glass", "price": 59.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "hk22", "name": "Modern Hookah · 22in", "category": "hookahs", "price": 89.99, "visible": true, "available": true, "featured": true, "image": "" },
+    { "id": "hkh", "name": "Silicone Hookah Hose", "category": "hookahs", "price": 16.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "hkc", "name": "Natural Coconut Coals · 1kg", "category": "hookahs", "price": 11.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "hkb", "name": "Clay Phunnel Bowl", "category": "hookahs", "price": 12.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "rawk", "name": "RAW Classic · King Size", "category": "papers", "price": 3.49, "visible": true, "available": true, "featured": true, "image": "" },
+    { "id": "rawc", "name": "RAW Cones · 6-pack", "category": "papers", "price": 5.99, "visible": true, "available": true, "featured": false, "image": "" },
+    { "id": "lgt", "name": "Torch Lighter", "category": "papers", "price": 9.99, "visible": true, "available": true, "featured": false, "image": "" }
+  ]
+}
