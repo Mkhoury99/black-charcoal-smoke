@@ -13,6 +13,8 @@ window.__resources = {
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="runtime.js"></script>
+<script src="data/backend-config.js"></script>
+<script src="data/catalog-api.js"></script>
 
 </head>
 <body>
@@ -629,12 +631,6 @@ function storeClock() {
     return { day: d.getDay(), hr: d.getHours() + d.getMinutes() / 60 };
   }
 }
-function readCatalogOverride() {
-  try {
-    const raw = localStorage.getItem('bcs-catalog');
-    return raw ? JSON.parse(raw) : null;
-  } catch (e) { return null; }
-}
 function applyCatalog(data) {
   if (!data || !Array.isArray(data.products)) return;
   PRODUCTS = data.products.map(p => ({
@@ -644,6 +640,26 @@ function applyCatalog(data) {
     image: typeof p.image === "string" ? p.image : ""
   }));
   if (Array.isArray(data.categories) && data.categories.length) CATEGORIES = data.categories;
+}
+async function loadLiveCatalog() {
+  if (window.BCSCatalog) {
+    try {
+      const result = await BCSCatalog.loadForShop();
+      if (result && result.catalog) applyCatalog(result.catalog);
+      return;
+    } catch (e) {}
+  }
+  try {
+    const raw = localStorage.getItem('bcs-catalog');
+    if (raw) {
+      applyCatalog(JSON.parse(raw));
+      return;
+    }
+  } catch (e) {}
+  try {
+    const data = await fetch('data/catalog.json?ts=' + Date.now()).then(r => r.ok ? r.json() : null);
+    if (data) applyCatalog(data);
+  } catch (e) {}
 }
 
 class Component extends DCLogic {
@@ -657,11 +673,7 @@ class Component extends DCLogic {
   canvasRef = React.createRef();
 
   componentDidMount() {
-    const local = readCatalogOverride();
-    if (local) { applyCatalog(local); this.setState({ now: Date.now() }); }
-    fetch('data/catalog.json?ts=' + Date.now()).then(r => r.ok ? r.json() : null).then(data => {
-      if (!local && data) { applyCatalog(data); this.setState({ now: Date.now() }); }
-    }).catch(() => {});
+    loadLiveCatalog().then(() => this.setState({ now: Date.now() }));
     this._t = setInterval(() => this.setState({ now: Date.now() }), 60000);
     this._onHash = () => this.applyHash();
     window.addEventListener('hashchange', this._onHash);
