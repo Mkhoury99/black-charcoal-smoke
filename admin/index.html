@@ -14,6 +14,7 @@ input, select { display: block; width: 100%; max-width: 100%; height: 44px; marg
 input[type=file] { height: auto; padding: 10px 12px; line-height: 1.4; }
 button { min-height: 40px; border: 0; border-radius: 8px; background: #39ff5c; color: #06140a; font-weight: 700; padding: 0 14px; cursor: pointer; }
 button.ghost { background: transparent; color: #e8e8ea; border: 1px solid rgba(255,255,255,.2); }
+button:disabled { opacity: .55; cursor: wait; }
 label.check { display: flex; gap: 8px; align-items: center; margin: 6px 0; }
 label.check input { width: auto; height: auto; min-height: 0; margin: 0; }
 .item { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
@@ -23,7 +24,13 @@ label.check input { width: auto; height: auto; min-height: 0; margin: 0; }
 .editor.on { display: block; }
 .hidden { display: none; }
 .err { color: #ffb4c8; }
+.banner { margin: 0 0 18px; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: #14151a; font-size: 14px; line-height: 1.45; }
+.banner.ok { border-color: rgba(57,255,92,.35); }
+.banner.warn { border-color: rgba(227,179,65,.45); color: #f0e6c8; }
+.banner code { font-size: 12px; color: #9ad0ff; }
 </style>
+<script src="../data/backend-config.js"></script>
+<script src="../data/catalog-api.js"></script>
 </head>
 <body>
 <div id="login" class="box">
@@ -35,7 +42,7 @@ label.check input { width: auto; height: auto; min-height: 0; margin: 0; }
 </div>
 <div id="app" class="wrap hidden">
   <h1>SHOP ITEMS</h1>
-  <p class="meta">Changes update the shop in this browser as soon as you save. They are not linked from the public site.</p>
+  <div id="modeBanner" class="banner"></div>
   <p><button id="add">Add item</button></p>
   <div id="addSlot"></div>
   <div id="list"></div>
@@ -53,7 +60,7 @@ label.check input { width: auto; height: auto; min-height: 0; margin: 0; }
     <img id="preview" alt="" style="display:none;width:120px;height:120px;object-fit:cover;border-radius:10px;margin:0 0 12px">
     <p><button type="button" class="ghost" id="clearPhoto">Remove photo</button></p>
     <p>
-      <button type="submit">Save</button>
+      <button type="submit" id="saveBtn">Save</button>
       <button type="button" class="ghost" id="cancel">Cancel</button>
       <button type="button" class="ghost" id="remove">Delete</button>
     </p>
@@ -66,11 +73,32 @@ const PASS = "charcoal123";
 let catalog = null;
 let editing = null;
 let photoData = "";
+let source = "file";
 const $ = id => document.getElementById(id);
 
 function esc(s) {
   return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
+
+function setBusy(busy) {
+  $("saveBtn").disabled = busy;
+  $("remove").disabled = busy;
+  $("add").disabled = busy;
+}
+
+function updateBanner() {
+  const el = $("modeBanner");
+  if (BCSCatalog.cloudEnabled()) {
+    el.className = "banner ok";
+    el.innerHTML = source === "cloud"
+      ? "Online mode: edits save to Firebase and show on every device after refresh."
+      : "Online mode is configured, but the cloud catalog is empty. Save any item once to upload it. Database: <code>" + esc(BCSCatalog.dbRoot()) + "</code>";
+  } else {
+    el.className = "banner warn";
+    el.innerHTML = "Local-only mode: edits stay in this browser. To sync online for free, open <code>data/backend-config.js</code>, paste your Firebase Realtime Database URL, push to GitHub, then reload this page.";
+  }
+}
+
 $("enter").onclick = () => {
   if ($("user").value.trim() !== USER || $("pass").value !== PASS) {
     $("err").textContent = "Wrong username or password.";
@@ -84,13 +112,18 @@ if (sessionStorage.getItem("bcs-admin") === "1") start();
 async function start() {
   $("login").classList.add("hidden");
   $("app").classList.remove("hidden");
-  const saved = localStorage.getItem("bcs-catalog");
-  if (saved) catalog = JSON.parse(saved);
-  else {
-    const res = await fetch("../data/catalog.json?ts=" + Date.now());
-    catalog = await res.json();
+  $("status").textContent = "Loading…";
+  try {
+    const result = await BCSCatalog.loadForAdmin();
+    catalog = result.catalog;
+    source = result.source;
+    $("status").textContent = "";
+    updateBanner();
+    draw();
+  } catch (e) {
+    $("status").textContent = "Could not load catalog.";
+    $("status").className = "err";
   }
-  draw();
 }
 function catName(id) {
   const c = catalog.categories.find(x => x.id === id);
@@ -143,6 +176,27 @@ function open(p) {
   }
 }
 $("cancel").onclick = () => parkEditor();
+
+async function persist(message) {
+  setBusy(true);
+  $("status").className = "meta";
+  $("status").textContent = "Saving…";
+  try {
+    const result = await BCSCatalog.saveCatalog(catalog);
+    source = result.source;
+    updateBanner();
+    $("status").textContent = message || (result.source === "cloud"
+      ? "Saved online. Anyone who opens the shop will see this after refresh."
+      : "Saved on this browser only.");
+    draw();
+  } catch (e) {
+    $("status").className = "err";
+    $("status").textContent = "Save failed. Check your Firebase URL and database rules.";
+  } finally {
+    setBusy(false);
+  }
+}
+
 $("editor").onsubmit = e => {
   e.preventDefault();
   const item = {
@@ -158,9 +212,7 @@ $("editor").onsubmit = e => {
   };
   if (editing) catalog.products = catalog.products.map(p => p.id === item.id ? item : p);
   else catalog.products.push(item);
-  localStorage.setItem("bcs-catalog", JSON.stringify(catalog));
-  $("status").textContent = "Saved. Open the shop in this browser to see it.";
-  draw();
+  persist();
 };
 $("photo").onchange = () => {
   const file = $("photo").files && $("photo").files[0];
@@ -190,8 +242,7 @@ $("clearPhoto").onclick = () => {
 $("remove").onclick = () => {
   if (!editing || !confirm("Delete this item?")) return;
   catalog.products = catalog.products.filter(p => p.id !== editing.id);
-  localStorage.setItem("bcs-catalog", JSON.stringify(catalog));
-  draw();
+  persist("Deleted.");
 };
 </script>
 </body>
